@@ -48,7 +48,7 @@ footer {
 ============================== */
 .background-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6列で並べる */
+  grid-template-columns: repeat(6, 1fr); /* 6列 */
   grid-auto-rows: 80px;                  /* 行の高さ */
   gap: 10px;
   position: absolute;
@@ -63,27 +63,27 @@ footer {
   align-items: center;
   text-decoration: none;
   font-weight: bold;
-  color: rgba(255,255,255,0.6);
+  color: rgba(100, 100, 100, 0.7); /* 灰色 */
   transition: transform 0.3s, color 0.3s;
   text-align: center;
 }
 
 .word:hover {
-  color: #fff;
+  color: rgba(50, 50, 50, 1); /* 濃い灰色に変化 */
   transform: scale(1.2);
 }
 
 /* サイズバリエーション */
 .word.small {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .word.medium {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .word.big {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* ==============================
