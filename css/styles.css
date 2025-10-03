@@ -23,13 +23,13 @@
 
 /* 背景リンク群 */
 .background-links {
-  position: absolute;
-  inset: 0;
+  position: absolute;  /* ←これ大事！ */
+  inset: 0;            /* 上下左右いっぱい */
   z-index: 1;
 }
 
 .word {
-  position: absolute;
+  position: absolute;  /* ←これでバラバラ配置できる */
   font-size: 2rem;
   font-weight: bold;
   color: rgba(255,255,255,0.6);
