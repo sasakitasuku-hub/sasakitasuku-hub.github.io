@@ -1,3 +1,51 @@
+/* ==============================
+   基本レイアウト
+============================== */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #1a4ba0;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a4ba0;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* ==============================
+   ポスター風トップセクション
+============================== */
 .poster {
   position: relative;
   width: 100%;
@@ -12,7 +60,6 @@
   text-align: center;
 }
 
-/* スローガン */
 .slogan h2 {
   font-size: 3rem;
   font-weight: bold;
@@ -21,18 +68,18 @@
   position: relative;
 }
 
-/* 背景リンク群 */
+/* 背景のキーワード群 */
 .background-links {
-  position: absolute;  /* ←これ大事！ */
-  inset: 0;            /* 上下左右いっぱい */
+  position: absolute;
+  inset: 0; /* 上下左右に広がる */
   z-index: 1;
 }
 
 .word {
-  position: absolute;  /* ←これでバラバラ配置できる */
+  position: absolute;
   font-size: 2rem;
   font-weight: bold;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: transform 0.3s, color 0.3s;
 }
@@ -42,7 +89,7 @@
   transform: scale(1.2);
 }
 
-/* バラバラ配置 (位置指定) */
+/* バラバラ配置 */
 .pos1 { top: 20%; left: 15%; font-size: 2.5rem; }
 .pos2 { top: 10%; left: 70%; font-size: 1.8rem; }
 .pos3 { top: 40%; left: 25%; font-size: 2.2rem; }
@@ -62,4 +109,76 @@
   background: rgba(0,0,0,0.4);
   padding: 0.5rem 1rem;
   border-radius: 8px;
+}
+
+/* ==============================
+   共通セクション (About, Goals)
+============================== */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a4ba0;
+}
+
+/* カード */
+.card, .skill-card, .timeline-item {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0; /* JSでアニメーション表示 */
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card {
+  display: inline-block;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* タイムライン (Goalsページ用) */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  border-left: 4px solid #1a4ba0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "●";
+  color: #1a4ba0;
+  position: absolute;
+  left: -12px;
+  top: 0;
+}
+
+/* ==============================
+   レスポンシブ
+============================== */
+@media (max-width: 768px) {
+  .slogan h2 {
+    font-size: 2rem;
+  }
+  .word {
+    font-size: 1.2rem;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
