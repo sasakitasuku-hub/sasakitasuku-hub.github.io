@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach(el => {
       const elTop = el.getBoundingClientRect().top;
       if (elTop < triggerBottom) {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
+        el.classList.add("show");
       }
     });
   }
@@ -16,4 +15,3 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", revealElements);
   revealElements(); // 初期表示も適用
 });
-
