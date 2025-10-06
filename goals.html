@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>目標 | Sasaki Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
     body {
-      margin: 0;
       font-family: "Noto Sans JP", sans-serif;
-      background: linear-gradient(135deg, #8e0000 0%, #400000 100%);
+      margin: 0;
+      background: radial-gradient(circle at center, #d94a38 0%, #8b0000 80%);
       color: #f4e1c1;
+      text-align: center;
       line-height: 1.8;
     }
 
     header {
-      background: #f4e1c1;
-      color: #8e0000;
-      text-align: center;
+      background-color: #f4e1c1;
+      color: #8b0000;
       padding: 20px;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     nav {
       background: #fff;
       text-align: center;
       padding: 10px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 2px solid #8b0000;
     }
 
     nav a {
       text-decoration: none;
-      color: #444;
+      color: #333;
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s;
@@ -44,43 +45,66 @@
     }
 
     main {
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 900px;
+      margin: 60px auto;
       padding: 0 20px;
-      position: relative;
     }
 
-    .section-title {
+    .poster-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #f4e1c1;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #f4e1c1;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .goal-section {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid #f4e1c1;
+      margin: 40px 0;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .goal-section h3 {
       font-size: 1.6rem;
-      font-weight: bold;
-      border-left: 6px solid #f4e1c1;
-      padding-left: 10px;
-      margin-bottom: 20px;
+      color: #f4e1c1;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #f4e1c1;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
-    p {
-      font-size: 1.05rem;
-      margin-bottom: 1.5em;
+    .goal-section div {
+      margin: 10px 0;
+      font-size: 1.1rem;
     }
 
-    .quote {
-      background: rgba(244, 225, 193, 0.1);
-      border-left: 5px solid #f4e1c1;
-      padding: 15px 20px;
-      font-style: italic;
-      margin: 30px 0;
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .timeline-item {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
     }
 
     .return {
-      text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .return a {
+      display: inline-block;
       text-decoration: none;
       background: #f4e1c1;
-      color: #8e0000;
-      padding: 10px 25px;
+      color: #8b0000;
+      padding: 10px 30px;
       border-radius: 30px;
       font-weight: bold;
       transition: background 0.3s, color 0.3s;
@@ -94,8 +118,9 @@
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
       color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -110,29 +135,29 @@
   </nav>
 
   <main>
-    <section>
-      <h2 class="section-title">短期的な目標</h2>
-      <p>
-        現在はCRM領域での業務を通して、データと感性の両面から顧客体験を設計する力を高めています。  
-        特に、定量的な施策分析に基づいた改善提案をスピーディに行うことを目指しています。
-      </p>
+    <h1 class="poster-title">GOALS</h1>
+
+    <section class="goal-section">
+      <h3>🎯 短期（〜半年）</h3>
+      <div>Web基礎技術（HTML/CSS/JavaScript）の習得</div>
+      <div>マーケティングに関わる知識の習得</div>
+      <div>クライアントのニーズに応えるためにどんな情報が必要なのかがわかる</div>
     </section>
 
-    <section>
-      <h2 class="section-title">中期的な目標</h2>
-      <p>
-        社内の他部署とも連携しながら、ブランド全体の「語り方」を整理・可視化することで、  
-        より統一感のあるコミュニケーション設計に貢献したいと考えています。
-      </p>
+    <section class="goal-section">
+      <h3>🚀 中期（1年以内）</h3>
+      <div>陶芸家であるパートナーのビジネス手法拡大に着手し、陶芸事業の翌年の粗利を10％以上増やす</div>
+      <div>習得した知識を適切に使いこなし、クライアントの希望に応えられる確率が上がっている</div>
+      <div>新しい知識を探し続け、身につけるための学習をし続ける習慣が身についている</div>
     </section>
 
-    <section>
-      <h2 class="section-title">長期的なビジョン</h2>
-      <p>
-        将来的には、クリエイティブディレクションやブランドストラテジーの領域にも携わり、  
-        数値と感性を行き来しながら、社会や人に寄り添うマーケティングを形にしていきたいです。  
-        “つくる人”と“伝える人”のあいだをつなぐ存在として成長していきたいと考えています。
-      </p>
+    <section class="goal-section">
+      <h3>🌏 長期（2〜3年）</h3>
+      <ul class="timeline">
+        <li class="timeline-item">実務経験を積み、複数のプロジェクトで中心的な役割を担う</li>
+        <li class="timeline-item">データ分析・UX・マーケティング戦略を横断的に扱える人材になる</li>
+        <li class="timeline-item">クリエイティブ × 分析の両軸で、ブランド価値を高める提案を行う</li>
+      </ul>
     </section>
 
     <div class="return">
