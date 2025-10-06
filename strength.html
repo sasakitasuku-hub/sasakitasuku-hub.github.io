@@ -1,157 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>強み | Sasaki Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #8e0000 0%, #400000 100%);
-      color: #f4e1c1;
-      line-height: 1.8;
-    }
-
-    header {
-      background-color: #f4e1c1;
-      color: #8e0000;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-    }
-
-    nav {
-      background: #fff;
-      text-align: center;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #444;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #c0392b;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: bold;
-      border-left: 6px solid #f4e1c1;
-      padding-left: 10px;
-      margin-bottom: 30px;
-    }
-
-    .strength {
-      background: rgba(244, 225, 193, 0.1);
-      border-left: 5px solid #f4e1c1;
-      border-radius: 4px;
-      padding: 20px;
-      margin-bottom: 25px;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .strength:hover {
-      transform: translateY(-3px);
-      background: rgba(244, 225, 193, 0.15);
-    }
-
-    .strength h3 {
-      color: #f4e1c1;
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-top: 60px;
-    }
-
-    .return {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .return a {
-      display: inline-block;
-      text-decoration: none;
-      background: #f4e1c1;
-      color: #8e0000;
-      padding: 10px 30px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .return a:hover {
-      background: #fff;
-      color: #c0392b;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strength｜強み | Sasaki Tasuku</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>佐々木輔 | 強み</header>
+  <div class="mandala" aria-hidden="true"><svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="profile.html">プロフィール</a>
-    <a href="strength.html" class="active">強み</a>
-    <a href="goals.html">目標</a>
-  </nav>
+  <header class="header-wrap">
+    <div class="site-header">
+      <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="strength.html">Strength</a>
+        <a href="goals.html">Goals</a>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <section>
-      <h2 class="section-title">佐々木輔の強み</h2>
+  <main class="container">
+    <section class="card reveal">
+      <div class="section-title"><span class="orn"></span>Strength｜強み</div>
 
-      <div class="strength">
-        <h3>① 数字から課題を読み解く分析力</h3>
-        <p>
-          EC運用やCRM業務の経験から、データの「見方」と「使い方」を意識するようになりました。  
-          数字の背後にあるユーザー行動や感情を考え、  
-          「なぜそうなったのか」「どうすれば改善できるか」を導くことを得意としています。
-        </p>
-      </div>
+      <article class="card reveal">
+        <h3 class="section-title" style="font-size:1.1rem; margin-bottom:8px;"><span class="orn"></span>数字から課題を読み解く分析力</h3>
+        <div class="content">
+          <p>EC運用やCRM業務の経験から、数値の「意味」を読み取り、ユーザー行動の背景を想定して改善案に落とし込むことが得意です。</p>
+        </div>
+      </article>
 
-      <div class="strength">
-        <h3>② 客観と共感のバランス感覚</h3>
-        <p>
-          論理的に考えながらも、“つくり手やブランドの想い”を汲み取ることを大切にしています。  
-          数字と感情、分析と表現、その両軸を行き来できる点が自分の強みです。
-        </p>
-      </div>
+      <article class="card reveal">
+        <h3 class="section-title" style="font-size:1.1rem; margin-bottom:8px;"><span class="orn"></span>客観と共感のバランス</h3>
+        <div class="content">
+          <p>データに基づく分析と、つくり手の想いを汲み取る感度を両立させ、ブランドの価値を損なわない施策提案を行います。</p>
+        </div>
+      </article>
 
-      <div class="strength">
-        <h3>③ 学びを継続し、形にする力</h3>
-        <p>
-          新しい知識を得たときは、まず仕事の現場でどう活かせるかを考えます。  
-          学んだことを言葉やデザイン、提案など“形”にして発信する習慣があります。
-        </p>
-      </div>
+      <article class="card reveal">
+        <h3 class="section-title" style="font-size:1.1rem; margin-bottom:8px;"><span class="orn"></span>学びを形にする実行力</h3>
+        <div class="content">
+          <p>学んだことを実際の施策に反映し、効果検証→改善のサイクルを回すことを重視しています。</p>
+        </div>
+      </article>
+
     </section>
 
-    <div class="return">
-      <a href="index.html">INDEXに戻る</a>
-    </div>
+    <div class="return reveal"><a href="index.html">INDEXに戻る</a></div>
   </main>
 
-  <footer>© 2025 Sasaki Portfolio</footer>
+  <footer class="site-footer">ॐ Peace in Creation</footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
