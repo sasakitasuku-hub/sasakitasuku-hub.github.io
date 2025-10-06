@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポスター風サイト</title>
+  <title>ポスター風サイト＋カルーセル</title>
   <style>
-    /* 全体の設定 */
+    /* === 基本設定 === */
     body {
       margin: 0;
       font-family: "Noto Sans JP", sans-serif;
@@ -16,7 +16,7 @@
       position: relative;
     }
 
-    /* 背景写真 */
+    /* === 背景写真 === */
     .background {
       position: absolute;
       top: 0;
@@ -24,11 +24,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.95; /* 写真をやや淡くして文字が見やすく */
+      opacity: 0.95;
       z-index: 0;
     }
 
-    /* 見出し（上部タイトル） */
+    /* === タイトル === */
     header {
       position: absolute;
       top: 20px;
@@ -36,12 +36,11 @@
       text-align: center;
       font-size: 2rem;
       font-weight: bold;
-      color: #fff;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       z-index: 2;
     }
 
-    /* 縦書きリンク共通 */
+    /* === 左右の縦書きリンク === */
     .side-links {
       position: absolute;
       top: 0;
@@ -50,10 +49,10 @@
       flex-direction: column;
       justify-content: center;
       font-weight: bold;
-      font-size: 2.2rem; /* ← 大きく */
+      font-size: 2.2rem;
       letter-spacing: 0.3em;
       z-index: 2;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* 文字を浮き上がらせる */
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     .left-links {
@@ -80,34 +79,139 @@
       color: #ffd700;
     }
 
+    /* === カルーセル部分 === */
+    .carousel-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 1s ease;
+      width: max-content;
+    }
+
+    .carousel-track img {
+      width: 300px;
+      height: 150px;
+      object-fit: cover;
+      margin: 0 5px;
+      border-radius: 6px;
+    }
+
+    /* === ボタン === */
+    .carousel-button {
+      position: absolute;
+      bottom: 60px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      z-index: 3;
+    }
+
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(255, 215, 0, 0.7);
+      color: black;
+    }
+
+    /* === フッター === */
     footer {
       position: absolute;
-      bottom: 15px;
+      bottom: 170px;
       width: 100%;
       text-align: center;
       font-size: 1rem;
-      color: #fff;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       z-index: 2;
     }
   </style>
 </head>
 <body>
-  <!-- 背景を写真に -->
+  <!-- 背景写真 -->
   <img src="https://placehold.co/1000x1200?text=Your+Photo" alt="背景画像" class="background">
 
+  <!-- タイトル -->
   <header>佐々木輔ポートフォリオ</header>
 
+  <!-- 左側リンク -->
   <div class="side-links left-links">
     <a href="profile.html">プロフィール</a>
     <a href="strength.html">強み</a>
   </div>
 
+  <!-- 右側リンク -->
   <div class="side-links right-links">
     <a href="goals.html">目標</a>
     <a href="contact.html">お問い合わせ</a>
   </div>
 
+  <!-- フッター -->
   <footer>© 2025 Sasaki Portfolio</footer>
+
+  <!-- カルーセル -->
+  <div class="carousel-container">
+    <button class="carousel-button prev">‹</button>
+    <div class="carousel-track" id="carousel">
+      <img src="https://placehold.co/300x150?text=趣味1">
+      <img src="https://placehold.co/300x150?text=趣味2">
+      <img src="https://placehold.co/300x150?text=趣味3">
+      <img src="https://placehold.co/300x150?text=趣味4">
+      <img src="https://placehold.co/300x150?text=趣味5">
+      <img src="https://placehold.co/300x150?text=趣味6">
+      <img src="https://placehold.co/300x150?text=趣味7">
+      <img src="https://placehold.co/300x150?text=趣味8">
+      <img src="https://placehold.co/300x150?text=趣味9">
+      <img src="https://placehold.co/300x150?text=趣味10">
+    </div>
+    <button class="carousel-button next">›</button>
+  </div>
+
+  <script>
+    const track = document.getElementById("carousel");
+    const slides = track.querySelectorAll("img");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    let index = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].clientWidth + 10; // 10pxはmargin分
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // 自動スライド（5秒ごと）
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
+  </script>
 </body>
 </html>
