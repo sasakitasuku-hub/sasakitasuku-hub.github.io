@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sasaki Portfolio</title>
+  <title>Sasaki Portfolio | Classic Indian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background: linear-gradient(135deg, #8b0000 0%, #400000 100%);
-      color: #f4e1c1;
+      font-family: "Noto Serif JP", serif;
+      background: radial-gradient(circle at center, #b51b16 0%, #4a0300 100%);
+      color: #f7e3a1;
       height: 100vh;
       overflow: hidden;
       display: flex;
@@ -19,128 +20,119 @@
       position: relative;
     }
 
-    /* 背景の模様（放射線風） */
-    .geometric {
+    /* 背景曼荼羅 */
+    .mandala {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        -45deg,
-        rgba(0, 0, 0, 0.15) 0px,
-        rgba(0, 0, 0, 0.15) 20px,
-        transparent 20px,
-        transparent 40px
-      );
+      width: 600px;
+      height: 600px;
+      background: url('images/mandala.svg') no-repeat center/contain;
+      opacity: 0.15;
+      animation: spin 80s linear infinite;
       z-index: 0;
     }
 
-    /* 中央の写真アイコン */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* 中央の写真 */
     .center-image {
-      width: 300px;
-      height: 300px;
-      background-image: url('images/profile.jpg'); /* ← あなたの画像 */
+      width: 280px;
+      height: 280px;
+      background-image: url('images/profile.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 50%;
-      border: 8px solid #f4e1c1;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      border: 8px solid #f7e3a1;
+      box-shadow: 0 0 40px rgba(247, 227, 161, 0.3);
       z-index: 2;
-      transition: transform 0.5s ease;
     }
 
-    .center-image:hover {
-      transform: scale(1.05);
-    }
-
-    /* 左右の縦書きナビゲーション */
+    /* 両端リンク */
     .side-text {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-weight: bold;
+      font-family: "Cinzel Decorative", serif;
       font-size: 1.6rem;
-      letter-spacing: 0.2em;
+      color: #f7e3a1;
+      letter-spacing: 0.15em;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
       z-index: 3;
     }
 
-    .left {
-      left: 50px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-
-    .right {
-      right: 50px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
+    .left { left: 60px; }
+    .right { right: 60px; }
 
     .side-text a {
       text-decoration: none;
-      color: #f4e1c1;
-      margin: 10px 0;
+      color: #f7e3a1;
       display: inline-block;
-      transition: color 0.3s, transform 0.3s;
+      margin: 20px 0;
+      transition: all 0.4s ease;
     }
 
     .side-text a:hover {
-      color: #ffffff;
+      color: #fff;
+      text-shadow: 0 0 10px #f7e3a1;
       transform: scale(1.1);
     }
 
     /* タイトル */
     h1 {
       position: absolute;
-      bottom: 60px;
-      font-size: 3rem;
-      font-weight: 900;
+      bottom: 120px;
+      font-family: "Cinzel Decorative", serif;
+      font-size: 2.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      background: linear-gradient(90deg, #f4e1c1, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      z-index: 2;
+      color: #f7e3a1;
+      letter-spacing: 0.25em;
+      z-index: 3;
+      text-shadow: 0 0 15px rgba(247, 227, 161, 0.4);
     }
 
-    /* カルーセル全体 */
+    /* カルーセル */
     .carousel {
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 220px;
-      overflow: hidden;
+      background: rgba(0, 0, 0, 0.25);
       display: flex;
-      align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.3);
+      align-items: center;
+      overflow: hidden;
     }
 
     .carousel img {
-      width: 300px;
-      height: 200px;
+      width: 280px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 6px;
+      border: 3px solid #f7e3a1;
+      border-radius: 10px;
       margin: 0 15px;
-      border: 3px solid #f4e1c1;
-      opacity: 0.8;
-      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0.5;
+      transition: all 1s ease;
     }
 
     .carousel img.active {
-      transform: scale(1.1);
       opacity: 1;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(247, 227, 161, 0.6);
     }
 
     footer {
       position: absolute;
       bottom: 10px;
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255,255,255,0.6);
     }
   </style>
 </head>
 <body>
-  <div class="geometric"></div>
+  <div class="mandala"></div>
 
   <div class="side-text left">
     <a href="profile.html">プロフィール</a>
@@ -153,31 +145,26 @@
     <a href="goals.html">目標</a>
   </div>
 
-  <h1>Sasaki Portfolio</h1>
+  <h1>Sasaki Tasuku</h1>
 
-  <!-- ▼ カルーセル部分 ▼ -->
   <div class="carousel">
-    <img src="images/hobby1.jpg" class="active" alt="趣味1">
-    <img src="images/hobby2.jpg" alt="趣味2">
-    <img src="images/hobby3.jpg" alt="趣味3">
-    <img src="images/hobby4.jpg" alt="趣味4">
-    <img src="images/hobby5.jpg" alt="趣味5">
+    <img src="images/india1.jpg" class="active" alt="インド風景1">
+    <img src="images/india2.jpg" alt="インド風景2">
+    <img src="images/india3.jpg" alt="インド風景3">
+    <img src="images/india4.jpg" alt="インド風景4">
+    <img src="images/india5.jpg" alt="インド風景5">
   </div>
 
   <footer>© 2025 Sasaki Portfolio</footer>
 
   <script>
-    // カルーセルの自動切り替え
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
-
-    function rotateCarousel() {
+    setInterval(() => {
       images[current].classList.remove('active');
       current = (current + 1) % images.length;
       images[current].classList.add('active');
-    }
-
-    setInterval(rotateCarousel, 3000); // 3秒ごとに切り替え
+    }, 3000);
   </script>
 </body>
 </html>
