@@ -1,170 +1,85 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sasaki Portfolio | Classic Indian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Noto Serif JP", serif;
-      background: radial-gradient(circle at center, #b51b16 0%, #4a0300 100%);
-      color: #f7e3a1;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    /* 背景曼荼羅 */
-    .mandala {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: url('images/mandala.svg') no-repeat center/contain;
-      opacity: 0.15;
-      animation: spin 80s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* 中央の写真 */
-    .center-image {
-      width: 280px;
-      height: 280px;
-      background-image: url('images/profile.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: 8px solid #f7e3a1;
-      box-shadow: 0 0 40px rgba(247, 227, 161, 0.3);
-      z-index: 2;
-    }
-
-    /* 両端リンク */
-    .side-text {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: "Cinzel Decorative", serif;
-      font-size: 1.6rem;
-      color: #f7e3a1;
-      letter-spacing: 0.15em;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      z-index: 3;
-    }
-
-    .left { left: 60px; }
-    .right { right: 60px; }
-
-    .side-text a {
-      text-decoration: none;
-      color: #f7e3a1;
-      display: inline-block;
-      margin: 20px 0;
-      transition: all 0.4s ease;
-    }
-
-    .side-text a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #f7e3a1;
-      transform: scale(1.1);
-    }
-
-    /* タイトル */
-    h1 {
-      position: absolute;
-      bottom: 120px;
-      font-family: "Cinzel Decorative", serif;
-      font-size: 2.8rem;
-      text-transform: uppercase;
-      color: #f7e3a1;
-      letter-spacing: 0.25em;
-      z-index: 3;
-      text-shadow: 0 0 15px rgba(247, 227, 161, 0.4);
-    }
-
-    /* カルーセル */
-    .carousel {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 220px;
-      background: rgba(0, 0, 0, 0.25);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .carousel img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border: 3px solid #f7e3a1;
-      border-radius: 10px;
-      margin: 0 15px;
-      opacity: 0.5;
-      transition: all 1s ease;
-    }
-
-    .carousel img.active {
-      opacity: 1;
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(247, 227, 161, 0.6);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sasaki Tasuku Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="mandala"></div>
-
-  <div class="side-text left">
-    <a href="profile.html">プロフィール</a>
+  <!-- mandala SVG (精密タイプ) -->
+  <div class="mandala" aria-hidden="true">
+    <!-- simple but detailed SVG mandala, stroke-only for elegance -->
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <g fill="none" stroke="black" stroke-width="1" opacity="0.9">
+        <circle cx="300" cy="300" r="140"/>
+        <g transform="translate(300,300)">
+          <!-- radial petals -->
+          <g stroke-width="1">
+            <!-- repeat petals -->
+            <g id="petal" transform="rotate(0)">
+              <path d="M0,-160 C18,-120 36,-120 54,-160" />
+            </g>
+            <!-- clone multiple rotations -->
+            <g id="petals"></g>
+          </g>
+        </g>
+      </g>
+      <script type="application/ecmascript"><![CDATA[
+        (function(){
+          var svg = document.currentScript.ownerDocument;
+          var parent = svg.querySelector('#petals');
+          for(var i=0;i<18;i++){
+            var g = svg.createElementNS('http://www.w3.org/2000/svg','g');
+            g.setAttribute('transform','rotate(' + (i*(360/18)) + ')');
+            var p = svg.createElementNS('http://www.w3.org/2000/svg','path');
+            p.setAttribute('d','M0,-160 C18,-120 36,-120 54,-160');
+            g.appendChild(p);
+            parent.appendChild(g);
+          }
+        })();
+      ]]></script>
+    </svg>
   </div>
 
-  <div class="center-image"></div>
+  <header class="header-wrap">
+    <div class="site-header">
+      <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="strength.html">Strength</a>
+        <a href="goals.html">Goals</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- side vertical links -->
+  <div class="side-text left"><a href="profile.html">プロフィール</a></div>
   <div class="side-text right">
     <a href="strength.html">強み</a><br><br>
     <a href="goals.html">目標</a>
   </div>
 
-  <h1>Sasaki Tasuku</h1>
+  <!-- center portrait -->
+  <main>
+    <div class="container reveal">
+      <div class="center-image" style="background-image:url('images/profile.jpg')" aria-hidden="true"></div>
+      <p style="text-align:center; margin-top:18px; color:rgba(247,227,161,0.9)">Craft • Observe • Convey</p>
+    </div>
+  </main>
 
-  <div class="carousel">
-    <img src="images/india1.jpg" class="active" alt="インド風景1">
-    <img src="images/india2.jpg" alt="インド風景2">
-    <img src="images/india3.jpg" alt="インド風景3">
-    <img src="images/india4.jpg" alt="インド風景4">
-    <img src="images/india5.jpg" alt="インド風景5">
+  <!-- carousel -->
+  <div class="carousel" role="region" aria-label="Hobby carousel">
+    <img src="images/india1.jpg" alt="写真1">
+    <img src="images/india2.jpg" alt="写真2">
+    <img src="images/india3.jpg" alt="写真3">
+    <img src="images/india4.jpg" alt="写真4">
+    <img src="images/india5.jpg" alt="写真5">
   </div>
 
-  <footer>© 2025 Sasaki Portfolio</footer>
+  <footer class="site-footer">ॐ Peace in Creation</footer>
 
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
