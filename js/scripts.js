@@ -1,17 +1,27 @@
-// スクロール時に要素をフェードイン
+// js/scripts.js
+// Carousel (index) + simple reveal on scroll
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".card, .skill-card, .timeline-item");
-
-  function revealElements() {
-    const triggerBottom = window.innerHeight * 0.85;
-    elements.forEach(el => {
-      const elTop = el.getBoundingClientRect().top;
-      if (elTop < triggerBottom) {
-        el.classList.add("show");
-      }
-    });
+  // Carousel
+  const carouselImgs = document.querySelectorAll('.carousel img');
+  if (carouselImgs.length){
+    let cur = 0;
+    carouselImgs[cur].classList.add('active');
+    setInterval(()=> {
+      carouselImgs[cur].classList.remove('active');
+      cur = (cur+1) % carouselImgs.length;
+      carouselImgs[cur].classList.add('active');
+    }, 3500);
   }
 
-  window.addEventListener("scroll", revealElements);
-  revealElements(); // 初期表示も適用
+  // reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  function onScrollReveal(){
+    const trigger = window.innerHeight * 0.85;
+    reveals.forEach(el=>{
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) el.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', onScrollReveal);
+  onScrollReveal();
 });
