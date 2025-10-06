@@ -1,59 +1,148 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>目標 | 自己紹介サイト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目標 | Sasaki Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      background: linear-gradient(135deg, #8e0000 0%, #400000 100%);
+      color: #f4e1c1;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #f4e1c1;
+      color: #8e0000;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c0392b;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+      border-left: 6px solid #f4e1c1;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1.5em;
+    }
+
+    .quote {
+      background: rgba(244, 225, 193, 0.1);
+      border-left: 5px solid #f4e1c1;
+      padding: 15px 20px;
+      font-style: italic;
+      margin: 30px 0;
+    }
+
+    .return {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .return a {
+      text-decoration: none;
+      background: #f4e1c1;
+      color: #8e0000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .return a:hover {
+      background: #fff;
+      color: #c0392b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">佐々木輔について</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">プロフィール</a>
-      <a href="goals.html" class="active">目標</a>
-      <a href="strength.html">強み</a>
+  <header>目標 | Sasaki Portfolio</header>
 
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="strength.html">強み</a>
+    <a href="goals.html" class="active">目標</a>
+  </nav>
 
   <main>
-    <section class="goals">
-      <h2>今後の目標</h2>
-      <p>私が目指している成長のステップを、短期・中期・長期に分けてまとめました。</p>
+    <section>
+      <h2 class="section-title">短期的な目標</h2>
+      <p>
+        現在はCRM領域での業務を通して、データと感性の両面から顧客体験を設計する力を高めています。  
+        特に、定量的な施策分析に基づいた改善提案をスピーディに行うことを目指しています。
+      </p>
+    </section>
 
-      <div class="goal-section">
-        <h3>🎯 短期（〜半年）</h3>
-          　<div>Web基礎技術（HTML/CSS/JavaScript）の習得</div>
-         　<div>マーケティングに関わる知識の習得</div>
-         　<div>クライアントのニーズに応えるためにどんな情報が必要なのかがわかる</div>
-        </ul>
-      </div>
-
-      <div class="goal-section">
-        <h3>🚀 中期（1年以内）</h3>
-          <div>陶芸家であるパートナーのビジネス手法拡大に着手し、陶芸事業の翌年の粗利を10％以上増やす</div>
-          <div>習得した知識を適切に使いこなし、クライアントの希望に応えられる確率が上がっている</div>
-          <div>新しい知識を探し続け、身につけるための学習をし続ける習慣が身についている</div>
-        </ul>
-      </div>
-
-     <div class="goal-section">
-  <h3>🌏 長期（2〜3年）</h3>
-  <div>クライアントやパートナーの事業に一貫して関われる「伴走型マーケター」として信頼を得る</div>
-  <div>Web制作・分析・発信を自力で一通り完結できるスキルセットを確立する</div>
-  <div>手工芸作家の魅力を発信するプロジェクトの立ち上げに着手する</div>
-</div>
-        </ul>
+    <section>
+      <h2 class="section-title">中期的な目標</h2>
+      <p>
+        社内の他部署とも連携しながら、ブランド全体の「語り方」を整理・可視化することで、  
+        より統一感のあるコミュニケーション設計に貢献したいと考えています。
+      </p>
+      <div class="quote">
+        「分析と表現、どちらも“伝える力”の延長線にある」  
       </div>
     </section>
+
+    <section>
+      <h2 class="section-title">長期的なビジョン</h2>
+      <p>
+        将来的には、クリエイティブディレクションやブランドストラテジーの領域にも携わり、  
+        数値と感性を行き来しながら、社会や人に寄り添うマーケティングを形にしていきたいです。  
+        “つくる人”と“伝える人”のあいだをつなぐ存在として成長していきたいと考えています。
+      </p>
+    </section>
+
+    <div class="return">
+      <a href="index.html">INDEXに戻る</a>
+    </div>
   </main>
 
-  <footer>
-    <p>© 2025 ○○ All Rights Reserved.</p>
-  </footer>
-
-  <script src="js/scripts.js"></script>
+  <footer>© 2025 Sasaki Portfolio</footer>
 </body>
 </html>
