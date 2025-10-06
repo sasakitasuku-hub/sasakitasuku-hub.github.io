@@ -1,170 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>目標 | Sasaki Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      background: radial-gradient(circle at center, #d94a38 0%, #8b0000 80%);
-      color: #f4e1c1;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    header {
-      background-color: #f4e1c1;
-      color: #8b0000;
-      padding: 20px;
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    nav {
-      background: #fff;
-      text-align: center;
-      padding: 10px;
-      border-bottom: 2px solid #8b0000;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #c0392b;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .poster-title {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: #f4e1c1;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-      border-bottom: 3px solid #f4e1c1;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-
-    .goal-section {
-      background: rgba(255, 255, 255, 0.08);
-      border: 2px solid #f4e1c1;
-      margin: 40px 0;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-
-    .goal-section h3 {
-      font-size: 1.6rem;
-      color: #f4e1c1;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #f4e1c1;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .goal-section div {
-      margin: 10px 0;
-      font-size: 1.1rem;
-    }
-
-    .timeline {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-
-    .timeline-item {
-      padding: 10px 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-    }
-
-    .return {
-      margin-top: 50px;
-    }
-
-    .return a {
-      display: inline-block;
-      text-decoration: none;
-      background: #f4e1c1;
-      color: #8b0000;
-      padding: 10px 30px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .return a:hover {
-      background: #fff;
-      color: #c0392b;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-top: 60px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Goals｜目標 | Sasaki Tasuku</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>目標 | Sasaki Portfolio</header>
+  <div class="mandala" aria-hidden="true"><svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="profile.html">プロフィール</a>
-    <a href="strength.html">強み</a>
-    <a href="goals.html" class="active">目標</a>
-  </nav>
-
-  <main>
-    <h1 class="poster-title">GOALS</h1>
-
-    <section class="goal-section">
-      <h3>🎯 短期（〜半年）</h3>
-      <div>Web基礎技術（HTML/CSS/JavaScript）の習得</div>
-      <div>マーケティングに関わる知識の習得</div>
-      <div>クライアントのニーズに応えるためにどんな情報が必要なのかがわかる</div>
-    </section>
-
-    <section class="goal-section">
-      <h3>🚀 中期（1年以内）</h3>
-      <div>陶芸家であるパートナーのビジネス手法拡大に着手し、陶芸事業の翌年の粗利を10％以上増やす</div>
-      <div>習得した知識を適切に使いこなし、クライアントの希望に応えられる確率が上がっている</div>
-      <div>新しい知識を探し続け、身につけるための学習をし続ける習慣が身についている</div>
-    </section>
-
-    <section class="goal-section">
-      <h3>🌏 長期（2〜3年）</h3>
-      <ul class="timeline">
-        <li class="timeline-item">実務経験を積み、複数のプロジェクトで中心的な役割を担う</li>
-        <li class="timeline-item">データ分析・UX・マーケティング戦略を横断的に扱える人材になる</li>
-        <li class="timeline-item">クリエイティブ × 分析の両軸で、ブランド価値を高める提案を行う</li>
-      </ul>
-    </section>
-
-    <div class="return">
-      <a href="index.html">INDEXに戻る</a>
+  <header class="header-wrap">
+    <div class="site-header">
+      <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="strength.html">Strength</a>
+        <a href="goals.html">Goals</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+    <div class="card reveal">
+      <div class="section-title"><span class="orn"></span>🎯 短期（〜半年）</div>
+      <div class="content">
+        <div>Web基礎技術（HTML/CSS/JavaScript）の習得</div>
+        <div>マーケティングに関わる知識の習得</div>
+        <div>クライアントのニーズに応えるために必要な情報が分かるようになる</div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="section-title"><span class="orn"></span>🚀 中期（1年以内）</div>
+      <div class="content">
+        <div>パートナーの陶芸事業で販路拡大を支援し、収益改善を目指す</div>
+        <div>習得した知識を実務で使いこなせるレベルに到達する</div>
+        <div>継続的な学習習慣を確立する</div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="section-title"><span class="orn"></span>🌏 長期（2〜3年）</div>
+      <div class="content">
+        <div>複数のプロジェクトで中心的に動ける実務力の獲得</div>
+        <div>データ分析・UX・ブランド戦略を横断的に扱える人材になる</div>
+        <div>クリエイティブと分析を掛け合わせ、価値を生む提案を行う</div>
+      </div>
+    </div>
+
+    <div class="return reveal"><a href="index.html">INDEXに戻る</a></div>
   </main>
 
-  <footer>© 2025 Sasaki Portfolio</footer>
+  <footer class="site-footer">ॐ Peace in Creation</footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
