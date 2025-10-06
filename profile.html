@@ -1,165 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>プロフィール | Sasaki Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #8e0000 0%, #400000 100%);
-      color: #f4e1c1;
-      line-height: 1.8;
-    }
-
-    header {
-      background-color: #f4e1c1;
-      color: #8e0000;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-    }
-
-    nav {
-      background: #fff;
-      text-align: center;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #444;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #c0392b;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: bold;
-      border-left: 6px solid #f4e1c1;
-      padding-left: 10px;
-      margin-top: 50px;
-      margin-bottom: 15px;
-    }
-
-    .profile-photo {
-      display: block;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 30px auto 20px auto;
-      border: 4px solid #f4e1c1;
-      box-shadow: 0 0 10px rgba(244, 225, 193, 0.4);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .return {
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .return a {
-      display: inline-block;
-      text-decoration: none;
-      background: #f4e1c1;
-      color: #8e0000;
-      padding: 10px 30px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .return a:hover {
-      background: #fff;
-      color: #c0392b;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      margin-top: 60px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile｜自己紹介 | Sasaki Tasuku</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>佐々木輔 | プロフィール</header>
+  <div class="mandala" aria-hidden="true">
+    <!-- reuse same SVG markup or keep empty element; animation from CSS applies -->
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><!-- simplified --></svg>
+  </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="profile.html" class="active">プロフィール</a>
-    <a href="strength.html">強み</a>
-    <a href="goals.html">目標</a>
-  </nav>
-
-  <main>
-    <img src="images/profile.jpg" alt="プロフィール写真" class="profile-photo">
-
-    <section>
-      <h2 class="section-title">自己紹介</h2>
-      <p>
-        はじめまして。CRM Unitの佐々木輔です。<br>
-        前職では古着ECモールや韓国アパレルブランド、韓国コスメブランドのEC運用・WEB広告を中心に担当していました。
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-title">経験分野・スキル</h2>
-      <ul>
-        <li>ECサイトの売上分析・改善提案</li>
-        <li>販売データや顧客データを用いた仮説設計と検証</li>
-        <li>コンテンツ・キャンペーン効果のレポーティングと示唆出し</li>
-        <li>韓国ブランドの市場動向・消費者トレンド把握</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">趣味・休日の過ごし方</h2>
-      <p>
-        趣味は陶芸とカレーを食べること。<br>
-        パートナーが陶芸家なので、作品撮影や発信を一緒に行うこともあります。<br>
-        南インドのミールスから欧風カレーまで古今東西あらゆるカレーが好きです。
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-title">今後の目標</h2>
-      <p>
-        チームの皆さんと協力しながら、より効果的で温かみのある発信ができるよう頑張ります。<br>
-        今後は「データから行動を導く」力を磨き、社内外の課題をより多角的に捉えられる人材を目指します。
-      </p>
-    </section>
-
-    <div class="return">
-      <a href="index.html">INDEXに戻る</a>
+  <header class="header-wrap">
+    <div class="site-header">
+      <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="strength.html">Strength</a>
+        <a href="goals.html">Goals</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+    <img src="images/profile.jpg" alt="プロフィール写真" class="profile-photo reveal">
+
+    <section class="card reveal">
+      <div class="section-title"><span class="orn"></span>Profile｜自己紹介</div>
+      <div class="content">
+        <p>はじめまして。CRM Unitの佐々木輔です。前職では古着ECモールや韓国アパレル／コスメのEC運用、WEB広告運用を担当してきました。現在はデータに基づく顧客理解を元に、顧客体験を設計する仕事をしています。</p>
+      </div>
+    </section>
+
+    <section class="card reveal">
+      <div class="section-title"><span class="orn"></span>Experience & Skills</div>
+      <div class="content">
+        <ul>
+          <li>ECサイトの売上分析・改善提案</li>
+          <li>販売データや顧客データを用いた仮説設計と検証</li>
+          <li>コンテンツ・キャンペーン効果のレポーティングと示唆出し</li>
+          <li>韓国ブランドの市場動向・消費者トレンド把握</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card reveal">
+      <div class="section-title"><span class="orn"></span>Hobbies</div>
+      <div class="content">
+        <p>趣味は陶芸とカレーを食べること。パートナーが陶芸家なので作品撮影や発信を一緒に行うこともあります。旅先で得た色彩感や器の手触りは仕事にも活かしています。</p>
+      </div>
+    </section>
+
+    <div class="return reveal"><a href="index.html">INDEXに戻る</a></div>
   </main>
 
-  <footer>© 2025 Sasaki Portfolio</footer>
+  <footer class="site-footer">ॐ Peace in Creation</footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
