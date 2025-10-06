@@ -5,47 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ポスター風サイト</title>
   <style>
+    /* 全体の設定 */
     body {
       margin: 0;
       font-family: "Noto Sans JP", sans-serif;
       background-color: #f8d19b;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: #fff;
       height: 100vh;
       overflow: hidden;
-    }
-
-    header {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .poster {
       position: relative;
-      width: 90%;
-      max-width: 600px;
-      height: 80vh;
-      background: #fff;
-      border: 8px solid #d46b50;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
     }
 
-    /* 中央の人物写真 */
-    .poster img {
+    /* 背景写真 */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.9;
+      opacity: 0.95; /* 写真をやや淡くして文字が見やすく */
+      z-index: 0;
     }
 
-    /* 左右の縦書きリンク */
+    /* 見出し（上部タイトル） */
+    header {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+
+    /* 縦書きリンク共通 */
     .side-links {
       position: absolute;
       top: 0;
@@ -54,57 +50,62 @@
       flex-direction: column;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
+      font-size: 2.2rem; /* ← 大きく */
+      letter-spacing: 0.3em;
+      z-index: 2;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* 文字を浮き上がらせる */
     }
 
     .left-links {
-      left: 10px;
+      left: 30px;
       writing-mode: vertical-rl;
       text-orientation: upright;
     }
 
     .right-links {
-      right: 10px;
+      right: 30px;
       writing-mode: vertical-rl;
       text-orientation: upright;
     }
 
-    /* 白背景を削除・文字だけ残す */
     .side-links a {
       text-decoration: none;
-      color: #222;
-      margin: 10px 0;
-      padding: 2px 0;
-      transition: color 0.3s;
+      color: #fff;
+      margin: 15px 0;
+      transition: transform 0.3s, color 0.3s;
     }
 
     .side-links a:hover {
-      color: #d46b50;
+      transform: scale(1.1);
+      color: #ffd700;
     }
 
     footer {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: #555;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      z-index: 2;
     }
   </style>
 </head>
 <body>
+  <!-- 背景を写真に -->
+  <img src="https://placehold.co/1000x1200?text=Your+Photo" alt="背景画像" class="background">
+
   <header>佐々木輔ポートフォリオ</header>
 
-  <div class="poster">
-    <img src="https://placehold.co/600x800?text=Your+Photo" alt="メイン画像">
+  <div class="side-links left-links">
+    <a href="profile.html">プロフィール</a>
+    <a href="strength.html">強み</a>
+  </div>
 
-    <div class="side-links left-links">
-      <a href="profile.html">プロフィール</a>
-      <a href="strength.html">強み</a>
-    </div>
-
-    <div class="side-links right-links">
-      <a href="goals.html">目標</a>
-      <a href="contact.html">お問い合わせ</a>
-    </div>
+  <div class="side-links right-links">
+    <a href="goals.html">目標</a>
+    <a href="contact.html">お問い合わせ</a>
   </div>
 
   <footer>© 2025 Sasaki Portfolio</footer>
