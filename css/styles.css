@@ -1,159 +1,92 @@
-/* ==============================
-   基本レイアウト
-============================== */
+/* === ベース === */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #f8f9fa;
+  background-color: #fafafa;
   color: #333;
   line-height: 1.6;
 }
 
+/* === ヘッダー === */
 header {
-  background: #1a4ba0;
-  color: #fff;
-  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .logo {
-  font-size: 1.5rem;
+.logo {
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 nav a {
-  color: #fff;
-  margin-left: 1rem;
+  margin-left: 20px;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: #000;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #1a4ba0;
-  color: #fff;
-  margin-top: 2rem;
+nav a.active {
+  color: #0077cc;
+  border-bottom: 2px solid #0077cc;
 }
 
-/* ==============================
-   ポスター風トップセクション
-============================== */
-.background-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6列 */
-  grid-auto-rows: 80px;                  /* 行の高さ */
-  gap: 10px;
-  position: absolute;
-  inset: 0;
-  padding: 20px;
-  z-index: 1;
-}
-
-.word {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-weight: bold;
-  color: rgba(100, 100, 100, 0.7); /* 灰色 */
-  transition: transform 0.3s, color 0.3s;
-  text-align: center;
-}
-
-.word:hover {
-  color: rgba(50, 50, 50, 1); /* 濃い灰色に変化 */
-  transform: scale(1.2);
-}
-
-/* サイズバリエーション */
-.word.small {
-  font-size: 0.9rem;
-}
-
-.word.medium {
-  font-size: 1.3rem;
-}
-
-.word.big {
-  font-size: 1.8rem;
-}
-
-/* ==============================
-   共通セクション (About, Goals)
-============================== */
-section {
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-h2.section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #1a4ba0;
-}
-
-/* カード */
-.card, .skill-card, .timeline-item {
+/* === メインコンテンツ === */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
   background: #fff;
-  padding: 1.5rem;
-  margin: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  opacity: 0; /* JSでアニメーション表示 */
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.card {
-  display: inline-block;
-  min-width: 200px;
-  text-align: center;
+.goals h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 10px;
 }
 
-/* タイムライン (Goalsページ用) */
+.goal-section {
+  margin-top: 40px;
+}
+
+.goal-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  list-style: none;
+  padding-left: 20px;
+  border-left: 3px solid #0077cc;
 }
 
 .timeline-item {
-  border-left: 4px solid #1a4ba0;
-  padding-left: 1rem;
+  margin-bottom: 10px;
   position: relative;
 }
 
 .timeline-item::before {
-  content: "●";
-  color: #1a4ba0;
+  content: "•";
   position: absolute;
-  left: -12px;
-  top: 0;
+  left: -14px;
+  color: #0077cc;
+  font-size: 1.2em;
 }
 
-/* ==============================
-   レスポンシブ
-============================== */
-@media (max-width: 768px) {
-  .slogan h2 {
-    font-size: 2rem;
-  }
-  .word {
-    font-size: 1.2rem;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
+/* === フッター === */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  color: #888;
 }
