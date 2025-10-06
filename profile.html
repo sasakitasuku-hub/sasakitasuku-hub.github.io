@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <body>
-  <header>
-    <h1 class="logo">My Portfolio</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">プロフィール</a>
-      <a href="goals.html" class="active">目標</a>
-      <a href="strength.html" class="active">強み</a>
-    </nav>
-  </header>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プロフィール</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プロフィール | Sasaki Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
   <style>
     body {
-      font-family: sans-serif;
-      margin: 40px;
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
     }
-    a {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #0077cc;
+
+    header {
+      background-color: #f8d19b;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
       text-decoration: none;
+      color: #444;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f8b400;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #222;
+      border-left: 5px solid #f8b400;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto;
+      border: 3px solid #f8b400;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9rem;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <a href="index.html">← ホームに戻る</a>
-  <h1>プロフィール</h1>
-  <p>ここにあなたの経歴や自己紹介を書きます。</p>
+  <header>佐々木輔 | プロフィール</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="profile.html" class="active">プロフィール</a>
+    <a href="strength.html">強み</a>
+    <a href="goals.html">目標</a>
+  </nav>
+
+  <main>
+    <img src="images/profile.jpg" alt="プロフィール写真" class="profile-photo">
+
+    <section>
+      <h2 class="section-title">自己紹介</h2>
+      <p>
+        はじめまして。CRM Unitの佐々木輔です。<br>
+      </p>
+      <p>
+        前職では古着ECモールや韓国アパレルブランド、韓国コスメブランドのEC運用・WEB広告を中心に担当していました。<br>
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">経験分野・スキル</h2>
+      <ul>
+        <li>ECサイトの売上分析・改善提案</li>
+        <li>販売データや顧客データを用いた仮説設計と検証</li>
+        <li>コンテンツ・キャンペーン効果のレポーティングと示唆出し</li>
+        <li>韓国ブランドの市場動向・消費者トレンド把握</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">趣味・休日の過ごし方</h2>
+      <p>
+        趣味は陶芸とカレーを食べること。<br>
+        パートナーが陶芸家なので、作品撮影や発信を一緒に行うこともあります。<br>
+      南インドのミールスから横風カレーまで古今東西あらゆるカレーが好きです。
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">今後の目標</h2>
+      <p>
+        チームの皆さんと協力しながら、より効果的で温かみのある発信ができるよう頑張ります。<br>
+        今後は「データから行動を導く」力を磨き、社内外の課題をより多角的に捉えられる人材を目指します。
+      </p>
+    </section>
+  </main>
+
+  <footer>© 2025 Sasaki Portfolio</footer>
 </body>
 </html>
-
