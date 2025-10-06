@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: "Noto Sans JP", sans-serif;
-      background-color: #f8d19b; /* 明るいオレンジ系背景 */
+      background-color: #f8d19b;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -70,18 +70,17 @@
       text-orientation: upright;
     }
 
+    /* 白背景を削除・文字だけ残す */
     .side-links a {
       text-decoration: none;
       color: #222;
-      background: rgba(255,255,255,0.7);
       margin: 10px 0;
-      padding: 5px;
-      border-radius: 5px;
-      transition: background 0.3s;
+      padding: 2px 0;
+      transition: color 0.3s;
     }
 
     .side-links a:hover {
-      background: #ffd700;
+      color: #d46b50;
     }
 
     footer {
