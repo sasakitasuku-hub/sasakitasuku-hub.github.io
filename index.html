@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Grid Page</title>
+  <title>佐々木輔のサイト</title>
   <style>
     body {
       font-family: sans-serif;
@@ -33,20 +33,26 @@
       color: #666;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
+      text-decoration: none;
     }
 
     .box:hover {
       transform: scale(1.03);
+      background: #f0f0f0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
 <body>
   <h1 style="text-align:center; padding:20px 0;">佐々木輔による佐々木輔のサイト</h1>
   <div class="container">
-    <div class="box">プロフィールは？</div>
-    <div class="box">強みは？</div>
-    <div class="box">今後の目標は？</div>
-
+    <a href="profile.html" class="box">プロフィールは？</a>
+    <a href="strength.html" class="box">強みは？</a>
+    <a href="goal.html" class="box">今後の目標は？</a>
   </div>
 </body>
 </html>
