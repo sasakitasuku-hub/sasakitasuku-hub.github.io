@@ -3,214 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポスター風サイト＋カルーセル</title>
+  <title>Sasaki Portfolio</title>
   <style>
-    /* === 基本設定 === */
     body {
       margin: 0;
       font-family: "Noto Sans JP", sans-serif;
-      background-color: #f8d19b;
+      background: linear-gradient(135deg, #c0392b 0%, #8e0000 100%);
       color: #fff;
       height: 100vh;
       overflow: hidden;
-      position: relative;
-    }
-
-    /* === 背景写真 === */
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.95;
-      z-index: 0;
-    }
-
-    /* === タイトル === */
-    header {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      z-index: 2;
-    }
-
-    /* === 左右の縦書きリンク === */
-    .side-links {
-      position: absolute;
-      top: 0;
-      bottom: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font-weight: bold;
-      font-size: ４rem;
-      letter-spacing: 0.3em;
-      z-index: 2;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    }
-
-    .left-links {
-      left: 30px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-
-    .right-links {
-      right: 30px;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-
-    .side-links a {
-      text-decoration: none;
-      color: #fff;
-      margin: 15px 0;
-      transition: transform 0.3s, color 0.3s;
-    }
-
-    .side-links a:hover {
-      transform: scale(1.1);
-      color: #ffd700;
-    }
-
-    /* === カルーセル部分 === */
-    .carousel-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 150px;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
       align-items: center;
-      justify-content: center;
-      z-index: 1;
+      position: relative;
     }
 
-    .carousel-track {
-      display: flex;
-      transition: transform 1s ease;
-      width: max-content;
+    /* 中央の写真部分 */
+    .center-image {
+      width: 350px;
+      height: 350px;
+      background-image: url('images/profile.jpg'); /* ←あなたの画像を置く */
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 8px solid #f4e1c1;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      z-index: 2;
+      transition: transform 0.5s ease;
     }
 
-    .carousel-track img {
-      width: 300px;
-      height: 150px;
-      object-fit: cover;
-      margin: 0 5px;
-      border-radius: 6px;
+    .center-image:hover {
+      transform: scale(1.05);
     }
 
-    /* === ボタン === */
-    .carousel-button {
+    /* 左右の縦書きナビゲーション */
+    .side-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      font-size: 1.6rem;
+      letter-spacing: 0.2em;
+    }
+
+    .left {
+      left: 50px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+
+    .right {
+      right: 50px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+
+    .side-text a {
+      text-decoration: none;
+      color: #f4e1c1;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .side-text a:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    /* 中央タイトル */
+    h1 {
       position: absolute;
       bottom: 60px;
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      font-size: 1.5rem;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 6px;
-      z-index: 3;
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: linear-gradient(90deg, #f4e1c1, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .prev {
-      left: 10px;
-    }
-    .next {
-      right: 10px;
+    /* バックグラウンドの図形装飾 */
+    .geometric {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(0,0,0,0.2) 0px,
+        rgba(0,0,0,0.2) 20px,
+        transparent 20px,
+        transparent 40px
+      );
+      z-index: 0;
     }
 
-    .carousel-button:hover {
-      background: rgba(255, 215, 0, 0.7);
-      color: black;
-    }
-
-    /* === フッター === */
     footer {
       position: absolute;
-      bottom: 170px;
-      width: 100%;
-      text-align: center;
-      font-size: 1rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-      z-index: 2;
+      bottom: 15px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
     }
   </style>
 </head>
 <body>
-  <!-- 背景写真 -->
-  <img src="https://placehold.co/1000x1200?text=Your+Photo" alt="背景画像" class="background">
+  <div class="geometric"></div>
 
-  <!-- タイトル -->
-  <header>佐々木輔自己紹介サイト</header>
-
-  <!-- 左側リンク -->
-  <div class="side-links left-links">
+  <div class="side-text left">
     <a href="profile.html">プロフィール</a>
-    <a href="strength.html">強み</a>
   </div>
 
-  <!-- 右側リンク -->
-  <div class="side-links right-links">
+  <div class="center-image"></div>
+
+  <div class="side-text right">
+    <a href="strength.html">強み</a><br><br>
     <a href="goals.html">目標</a>
   </div>
 
-  <!-- フッター -->
+  <h1>sasak i&nbsp;por tfo lio</h1>
+
   <footer>© 2025 Sasaki Portfolio</footer>
-
-  <!-- カルーセル -->
-  <div class="carousel-container">
-    <button class="carousel-button prev">‹</button>
-    <div class="carousel-track" id="carousel">
-      <img src="https://placehold.co/300x150?text=趣味1">
-      <img src="https://placehold.co/300x150?text=趣味2">
-      <img src="https://placehold.co/300x150?text=趣味3">
-      <img src="https://placehold.co/300x150?text=趣味4">
-      <img src="https://placehold.co/300x150?text=趣味5">
-      <img src="https://placehold.co/300x150?text=趣味6">
-      <img src="https://placehold.co/300x150?text=趣味7">
-      <img src="https://placehold.co/300x150?text=趣味8">
-      <img src="https://placehold.co/300x150?text=趣味9">
-      <img src="https://placehold.co/300x150?text=趣味10">
-    </div>
-    <button class="carousel-button next">›</button>
-  </div>
-
-  <script>
-    const track = document.getElementById("carousel");
-    const slides = track.querySelectorAll("img");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    let index = 0;
-
-    function updateCarousel() {
-      const slideWidth = slides[0].clientWidth + 10; // 10pxはmargin分
-      track.style.transform = `translateX(-${index * slideWidth}px)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
-
-    // 自動スライド（5秒ごと）
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    }, 5000);
-  </script>
 </body>
 </html>
