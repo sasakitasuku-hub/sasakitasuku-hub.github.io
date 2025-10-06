@@ -1,28 +1,133 @@
 <!DOCTYPE html>
 <html lang="ja">
-<body>
-  <header>
-    <h1 class="logo">My Portfolio</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">プロフィール</a>
-      <a href="goals.html" class="active">目標</a>
-      <a href="strength.html" class="active">強み</a>
-    </nav>
-  </header>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>強み</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>強み | Sasaki Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
   <style>
-    body { font-family: sans-serif; margin: 40px; }
-    a { display: inline-block; margin-bottom: 20px; color: #0077cc; text-decoration: none; }
+    body {
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #f8d19b;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f8b400;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #222;
+      border-left: 5px solid #f8b400;
+      padding-left: 10px;
+      margin-top: 40px;
+    }
+
+    .strength {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .strength h3 {
+      color: #f8b400;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9rem;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <a href="index.html">← ホームに戻る</a>
-  <h1>強み</h1>
-  <p>あなたの強みや得意分野をここに書きます。</p>
+  <header>佐々木輔 | 強み</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="strength.html" class="active">強み</a>
+    <a href="goals.html">目標</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2 class="section-title">佐々木輔の強み</h2>
+
+      <div class="strength">
+        <h3>① 数字から課題を読み解く分析力</h3>
+        <p>
+          EC運用やCRM業務の経験から、データの「見方」と「使い方」を意識するようになりました。  
+          単に数値を見るだけでなく、背景にあるユーザー行動や感情を想定し、  
+          「なぜそうなったのか」「どうすれば改善できるか」を具体的に考えることを得意としています。
+        </p>
+      </div>
+
+      <div class="strength">
+        <h3>② 客観と共感のバランス感覚</h3>
+        <p>
+          クライアントワークの経験から、客観的な数字分析と、  
+          “ブランドやつくり手の想い”に寄り添う姿勢を大切にしています。  
+          論理だけでなく、感情や文脈も含めてどうすれば良いか考えられる点が自分の強みです。
+        </p>
+      </div>
+
+      <div class="strength">
+        <h3>③ 学びを継続し、形にする力</h3>
+        <p>
+          新しい知識を得たら、まず自分の仕事にどう活かせるかを考えるタイプです。  
+          Web制作やマーケティング領域では日々変化があるため、  
+          自主的に学び続け、少しでも役に立てるよう意識しています。
+        </p>
+      </div>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Sasaki Portfolio</footer>
 </body>
 </html>
-
