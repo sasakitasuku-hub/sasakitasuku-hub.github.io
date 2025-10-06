@@ -9,15 +9,16 @@
     body {
       font-family: "Noto Sans JP", sans-serif;
       margin: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: linear-gradient(135deg, #8e0000 0%, #400000 100%);
+      color: #f4e1c1;
+      line-height: 1.8;
     }
 
     header {
-      background-color: #f8d19b;
+      background-color: #f4e1c1;
+      color: #8e0000;
       padding: 20px;
       text-align: center;
-      color: white;
       font-size: 1.8rem;
       font-weight: bold;
       letter-spacing: 0.05em;
@@ -39,47 +40,70 @@
     }
 
     nav a:hover {
-      color: #f8b400;
+      color: #c0392b;
     }
 
     main {
       max-width: 800px;
-      margin: 40px auto;
+      margin: 60px auto;
       padding: 0 20px;
-      line-height: 1.8;
     }
 
     .section-title {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
-      color: #222;
-      border-left: 5px solid #f8b400;
+      border-left: 6px solid #f4e1c1;
       padding-left: 10px;
-      margin-top: 40px;
+      margin-bottom: 30px;
     }
 
     .strength {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: rgba(244, 225, 193, 0.1);
+      border-left: 5px solid #f4e1c1;
+      border-radius: 4px;
       padding: 20px;
-      margin-top: 20px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .strength:hover {
+      transform: translateY(-3px);
+      background: rgba(244, 225, 193, 0.15);
     }
 
     .strength h3 {
-      color: #f8b400;
-      font-size: 1.2rem;
+      color: #f4e1c1;
+      font-size: 1.25rem;
       margin-bottom: 10px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      color: #777;
+      color: rgba(255,255,255,0.7);
       font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    .return {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .return a {
+      display: inline-block;
+      text-decoration: none;
+      background: #f4e1c1;
+      color: #8e0000;
+      padding: 10px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .return a:hover {
       background: #fff;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
+      color: #c0392b;
     }
   </style>
 </head>
@@ -101,31 +125,31 @@
         <h3>① 数字から課題を読み解く分析力</h3>
         <p>
           EC運用やCRM業務の経験から、データの「見方」と「使い方」を意識するようになりました。  
-          単に数値を見るだけでなく、背景にあるユーザー行動や感情を想定し、  
-          「なぜそうなったのか」「どうすれば改善できるか」を具体的に考えることを得意としています。
+          数字の背後にあるユーザー行動や感情を考え、  
+          「なぜそうなったのか」「どうすれば改善できるか」を導くことを得意としています。
         </p>
       </div>
 
       <div class="strength">
         <h3>② 客観と共感のバランス感覚</h3>
         <p>
-          クライアントワークの経験から、客観的な数字分析と、  
-          “ブランドやつくり手の想い”に寄り添う姿勢を大切にしています。  
-          論理だけでなく、感情や文脈も含めてどうすれば良いか考えられる点が自分の強みです。
+          論理的に考えながらも、“つくり手やブランドの想い”を汲み取ることを大切にしています。  
+          数字と感情、分析と表現、その両軸を行き来できる点が自分の強みです。
         </p>
       </div>
 
       <div class="strength">
         <h3>③ 学びを継続し、形にする力</h3>
         <p>
-          新しい知識を得たら、まず自分の仕事にどう活かせるかを考えるタイプです。  
-          Web制作やマーケティング領域では日々変化があるため、  
-          自主的に学び続け、少しでも役に立てるよう意識しています。
-        </p>
-      </div>
+          新しい知識を得たときは、まず仕事の現場でどう活かせるかを考えます。  
+          学んだことを言葉やデザイン、提案など“形”にして発信する習慣があります。
         </p>
       </div>
     </section>
+
+    <div class="return">
+      <a href="index.html">INDEXに戻る</a>
+    </div>
   </main>
 
   <footer>© 2025 Sasaki Portfolio</footer>
