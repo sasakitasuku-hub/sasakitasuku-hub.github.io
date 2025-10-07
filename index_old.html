@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sasaki Tasuku Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- 背景の曼荼羅（精密タイプ） -->
+  <div class="mandala" aria-hidden="true">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#f7e3a1" stroke-width="1">
+        <circle cx="300" cy="300" r="140" />
+        <g transform="translate(300,300)">
+          <!-- 花びらを18方向に配置 -->
+          <g id="petals"></g>
+        </g>
+      </g>
+      <script type="application/ecmascript"><![CDATA[
+        (function(){
+          const svg = document.currentScript.ownerDocument;
+          const parent = svg.querySelector('#petals');
+          for(let i=0; i<18; i++){
+            const g = svg.createElementNS('http://www.w3.org/2000/svg','g');
+            g.setAttribute('transform',`rotate(${i*20})`);
+            const p = svg.createElementNS('http://www.w3.org/2000/svg','path');
+            p.setAttribute('d','M0,-160 C18,-120 36,-120 54,-160');
+            g.appendChild(p);
+            parent.appendChild(g);
+          }
+        })();
+      ]]></script>
+    </svg>
+  </div>
+
+  <!-- ヘッダー：タイトルとナビゲーション -->
+  <header class="header-wrap">
+    <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="strength.html">Strength</a>
+      <a href="goals.html">Goals</a>
+    </nav>
+  </header>
+
+  <!-- メイン写真とメッセージ -->
+  <main>
+    <div class="center-image" style="background-image:url('images/profile.jpeg')"></div>
+  </main>
+
+  <!-- 写真カルーセル -->
+  <section class="carousel" aria-label="Hobby carousel">
+    <img src="images/836ef8d9-23b2-4b08-af2d-ac8ff7091dc7.png" alt="1">
+    <img src="images/french.png" alt="2">
+    <img src="images/20251007-100058.jpeg" alt="3">
+    <img src="images/dal.jpeg" alt="4">
+    <img src="images/biriyani.jpeg" alt="5">
+    <img src="images/data_driven.jpg" alt="6">
+    <img src="images/yob.jpg" alt="7">
+    <img src="images/street.jpg" alt="8">
+    <img src="images/jomon.jpg" alt="9">
+    <img src="images/potterypiece.jpeg" alt="10">
+    <img src="images/pottery.jpg" alt="11">
+    <img src="images/pottery2.jpg" alt="12">
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">ॐ Peace in Creation</footer>
+
+  <!-- JS -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
