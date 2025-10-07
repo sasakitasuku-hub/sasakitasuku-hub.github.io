@@ -8,54 +8,92 @@
 </head>
 
 <body>
-  <!-- 背景の曼荼羅（精密タイプ） -->
-  <div class="mandala" aria-hidden="true">
-    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" stroke="#f7e3a1" stroke-width="1">
-        <circle cx="300" cy="300" r="140" />
-        <g transform="translate(300,300)">
-          <!-- 花びらを18方向に配置 -->
-          <g id="petals"></g>
-        </g>
-      </g>
-      <script type="application/ecmascript"><![CDATA[
-        (function(){
-          const svg = document.currentScript.ownerDocument;
-          const parent = svg.querySelector("#petals");
-          for(let i=0; i<18; i++){
-            const g = svg.createElementNS("http://www.w3.org/2000/svg","g");
-            g.setAttribute("transform",`rotate(${i*20})`);
-            const p = svg.createElementNS("http://www.w3.org/2000/svg","path");
-            p.setAttribute("d","M0,-160 C18,-120 36,-120 54,-160");
-            g.appendChild(p);
-            parent.appendChild(g);
-          }
-        })();
-      ]]></script>
-    </svg>
-  </div>
+  <div class="mandala"></div>
 
-  <!-- ヘッダー：タイトルとナビゲーション -->
-  <header class="header-wrap">
-    <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="strength.html">Strength</a>
-      <a href="goals.html">Goals</a>
+  <header>
+    <h1>Sasaki Tasuku Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#strength">Strength</a>
+      <a href="#goals">Goals</a>
     </nav>
   </header>
 
-  <!-- メイン写真とメッセージ -->
   <main>
-    <div class="center-photo" style="background-image:url('images/profile.jpeg')"></div>
-    <p class="tagline">「データ」と「人」を繋ぐ</p>
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+      <div class="center-photo" style="background-image:url('images/profile.jpeg')"></div>
+      <h2 class="tagline">Bridging Data and Creativity</h2>
+      <p>データと創造性を繋ぎ、新たな価値を創造します。</p>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section profile-section">
+      <h2>自己紹介</h2>
+      <p>
+        はじめまして。CRM Unitの佐々木輔です。<br>
+        前職ではEC運用やWEB広告を担当し、韓国ブランドや古着系ECなどのデータ分析を行っていました。<br>
+        現在は、より多面的に顧客理解を深めることを目指しています。
+      </p>
+      <h3>経験・スキル</h3>
+      <ul>
+        <li>ECサイトの売上分析・改善提案</li>
+        <li>販売データの活用とレポーティング</li>
+        <li>マーケティング施策の仮説設計と検証</li>
+      </ul>
+      <h3>趣味</h3>
+      <p>
+        趣味は陶芸と南インド料理。<br>
+        パートナーが陶芸家なので、作品撮影や発信を一緒に行っています。<br>
+        休日はスパイス調合やカレー屋巡りを楽しんでいます。
+      </p>
+      <!-- 写真カルーセル -->
+      <div class="carousel" aria-label="Hobby carousel">
+        <img src="images/pottery.jpg" alt="陶芸作品1">
+        <img src="images/pottery2.jpg" alt="陶芸作品2">
+        <img src="images/potterypiece.jpeg" alt="陶芸作品3">
+        <img src="images/jomon.jpg" alt="縄文土器">
+        <img src="images/biriyani.jpeg" alt="ビリヤニ">
+        <img src="images/dal.jpeg" alt="ダル">
+        <img src="images/street.jpg" alt="街の風景">
+        <img src="images/yob.jpg" alt="Year of Birth">
+        <img src="images/20251007-100058.jpeg" alt="料理">
+        <img src="images/836ef8d9-23b2-4b08-af2d-ac8ff7091dc7.png" alt="作品">
+      </div>
+    </section>
+
+    <!-- Strength Section -->
+    <section id="strength" class="section strength-section">
+      <h2>私の強み</h2>
+      <p>
+        データ分析とクリエイティブな発想を組み合わせることで、
+        複雑な課題を解決し、具体的な成果に繋げることができます。
+      </p>
+      <ul>
+        <li>データに基づいた論理的思考</li>
+        <li>新しい技術や知識への探求心</li>
+        <li>チームでの協調性</li>
+      </ul>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="section goals-section">
+      <h2>今後の目標</h2>
+      <p>
+        将来的には、データサイエンスとデザイン思考を融合させ、
+        ユーザー体験を最大化するプロダクト開発に貢献したいと考えています。
+      </p>
+      <ul>
+        <li>Python/Rを用いた高度なデータ分析スキル習得</li>
+        <li>UI/UXデザインの基礎学習</li>
+        <li>プロジェクトマネジメント経験の蓄積</li>
+      </ul>
+    </section>
   </main>
 
-  <!-- フッター -->
-  <footer class="site-footer">ॐ Peace in Creation</footer>
+  <footer>ॐ Peace in Creation</footer>
 
-  <!-- JS -->
   <script src="js/scripts.js"></script>
 </body>
 </html>
