@@ -1,175 +1,104 @@
-/* ==============================
-   Sasaki Tasuku Portfolio
-   Classic Indian Theme
-   ============================== */
-
-/* ------------------------------
-   基本設定
---------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
-
-html, body {
+/* ===== 全体設定 ===== */
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  background: radial-gradient(circle at center, #5e0f0d 0%, #2d0605 100%);
+  font-family: "Noto Sans JP", sans-serif;
+  background: radial-gradient(circle at center, #5e0f0d, #2d0605);
   color: #f7e3a1;
-  font-family: "Noto Serif JP", serif;
-  overflow-x: hidden;
+  text-align: center;
 }
 
-/* ------------------------------
-   背景曼荼羅
---------------------------------*/
+/* ===== 背景の曼荼羅 ===== */
 .mandala {
   position: fixed;
   inset: 0;
+  background-image: url('../images/mandala.svg'); /* 任意の模様画像 */
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
   z-index: -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.15;
-  animation: rotateSlow 120s linear infinite;
-  pointer-events: none;
+  animation: spin 120s linear infinite;
 }
 
-.mandala svg {
-  width: 90vmin;
-  height: 90vmin;
-  stroke: #f7e3a1;
-}
-
-@keyframes rotateSlow {
-  from { transform: rotate(0deg); }
+@keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* ------------------------------
-   ヘッダー
---------------------------------*/
-.header-wrap {
-  background: rgba(181, 27, 22, 0.8);
-  box-shadow: 0 0 15px rgba(247, 227, 161, 0.3);
-  text-align: center;
-  padding: 30px 0 15px;
+/* ===== ヘッダー ===== */
+header {
+  background: rgba(181, 27, 22, 0.85);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(247, 227, 161, 0.3);
 }
 
-.site-title {
+h1 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 2.4rem;
-  letter-spacing: 0.1em;
-  color: #f7e3a1;
   margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
 }
 
-.site-nav {
-  margin-top: 10px;
-}
-
-.site-nav a {
-  text-decoration: none;
+nav a {
   color: #f7e3a1;
-  margin: 0 20px;
+  margin: 0 15px;
+  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
 }
 
-.site-nav a:hover {
+nav a:hover {
   color: #fff;
-  text-shadow: 0 0 8px #f7e3a1;
+  text-shadow: 0 0 5px #f7e3a1;
 }
 
-/* ------------------------------
-   メイン画像（中央）
---------------------------------*/
-.center-image {
-  width: 300px;
-  height: 300px;
+/* ===== 真ん中の写真 ===== */
+.center-photo {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  margin: 80px auto 20px;
+  border: 4px double #f7e3a1;
+  margin: 60px auto 20px;
   background-size: cover;
   background-position: center;
-  border: 5px double #f7e3a1;
-  box-shadow: 0 0 20px rgba(247, 227, 161, 0.3);
-  transition: transform 0.5s ease;
+  box-shadow: 0 0 15px rgba(247, 227, 161, 0.4);
 }
 
-.center-image:hover {
-  transform: scale(1.05);
+.tagline {
+  font-size: 1rem;
+  color: rgba(247, 227, 161, 0.9);
 }
 
-/* ------------------------------
-   カルーセル（自動スライド対応）
---------------------------------*/
+/* ===== カルーセル（横スライド） ===== */
 .carousel {
   display: flex;
   overflow-x: scroll;
+  gap: 15px;
+  padding: 20px;
   scroll-behavior: smooth;
-  gap: 20px;
-  padding: 20px 30px;
-  justify-content: flex-start;
-  align-items: center;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
 }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome/Safari */
 }
 
 .carousel img {
-  height: 220px;
-  flex-shrink: 0;
-  border-radius: 12px;
+  height: 180px;
+  border-radius: 8px;
   border: 2px solid #f7e3a1;
-  box-shadow: 0 0 12px rgba(247, 227, 161, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 10px rgba(247, 227, 161, 0.2);
+  transition: transform 0.4s;
 }
 
 .carousel img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 15px rgba(247, 227, 161, 0.6);
+  transform: scale(1.05);
 }
 
-/* ------------------------------
-   フッター
---------------------------------*/
-.site-footer {
-  text-align: center;
-  padding: 40px 0 20px;
-  font-family: "Cinzel Decorative", serif;
-  font-size: 1.2rem;
-  color: #f7e3a1;
-  letter-spacing: 0.05em;
+/* ===== フッター ===== */
+footer {
+  margin-top: 40px;
+  padding: 20px;
   border-top: 1px solid rgba(247, 227, 161, 0.3);
-  margin-top: 60px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.1rem;
   text-shadow: 0 0 5px rgba(247, 227, 161, 0.5);
-}
-
-/* ------------------------------
-   スクロール時のアニメーション
---------------------------------*/
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ------------------------------
-   レスポンシブ対応
---------------------------------*/
-@media (max-width: 768px) {
-  .site-title {
-    font-size: 1.8rem;
-  }
-  .center-image {
-    width: 220px;
-    height: 220px;
-  }
-  .carousel img {
-    height: 150px;
-  }
 }
