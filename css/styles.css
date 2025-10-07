@@ -1,3 +1,8 @@
+/* ==============================
+   Sasaki Tasuku Portfolio
+   styles.css（統一デザイン）
+   ============================== */
+
 /* ===== ベース設定 ===== */
 body {
   font-family: "Noto Sans JP", sans-serif;
@@ -37,7 +42,11 @@ nav a:hover {
   color: #ffe9b1;
 }
 
-/* ===== メイン ===== */
+nav a.active {
+  text-decoration: underline;
+}
+
+/* ===== メイン共通 ===== */
 main {
   text-align: center;
   padding: 30px 15px;
@@ -111,6 +120,57 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+/* ===== ページタイトル・共通ボックス ===== */
+.page-title {
+  font-size: 1.6rem;
+  color: #704214;
+  margin-top: 40px;
+  border-left: 5px solid #f8b400;
+  padding-left: 10px;
+  display: inline-block;
+  text-align: left;
+}
+
+.content-box {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fffdf7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.content-box h3 {
+  color: #a37025;
+  margin-top: 0;
+}
+
+.content-box ul {
+  padding-left: 20px;
+}
+
+.content-box li {
+  margin-bottom: 8px;
+}
+
+/* ===== 画像の枠フィット設定 ===== */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.content-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
 /* ===== フッター ===== */
 footer {
   text-align: center;
@@ -137,48 +197,9 @@ footer {
     margin: 40px 10px;
     padding: 15px;
   }
-}
-/* ===== 画像を枠にフィットさせる ===== */
 
-/* 各ページ内の画像共通設定 */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-/* カルーセル画像（横並びのときも比率維持） */
-.carousel img {
-  flex: 0 0 auto;
-  width: 300px;
-  height: 200px;
-  object-fit: cover; /* 画像の比率を保ちながら枠に合わせる */
-  scroll-snap-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* コンテンツ内に挿入する画像（例：profileページなど） */
-.content-box img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* ===== スマホ対応 ===== */
-@media (max-width: 600px) {
-  .carousel img {
-    width: 80%;
-    height: auto;
-  }
-
-  .content-box img {
-    width: 100%;
-    height: auto;
+  .content-box {
+    margin: 20px 10px;
+    padding: 15px;
   }
 }
-
