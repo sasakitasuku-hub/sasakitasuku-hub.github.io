@@ -138,3 +138,47 @@ footer {
     padding: 15px;
   }
 }
+/* ===== 画像を枠にフィットさせる ===== */
+
+/* 各ページ内の画像共通設定 */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+/* カルーセル画像（横並びのときも比率維持） */
+.carousel img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover; /* 画像の比率を保ちながら枠に合わせる */
+  scroll-snap-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* コンテンツ内に挿入する画像（例：profileページなど） */
+.content-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 600px) {
+  .carousel img {
+    width: 80%;
+    height: auto;
+  }
+
+  .content-box img {
+    width: 100%;
+    height: auto;
+  }
+}
+
