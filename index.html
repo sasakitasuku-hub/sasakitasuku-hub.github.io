@@ -5,152 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sasaki Tasuku Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- 背景の曼荼羅 -->
-  <div class="mandala" aria-hidden="true"></div>
+  <!-- 背景の曼荼羅（精密タイプ） -->
+  <div class="mandala" aria-hidden="true">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#f7e3a1" stroke-width="1">
+        <circle cx="300" cy="300" r="140" />
+        <g transform="translate(300,300)">
+          <!-- 花びらを18方向に配置 -->
+          <g id="petals"></g>
+        </g>
+      </g>
+      <script type="application/ecmascript"><![CDATA[
+        (function(){
+          const svg = document.currentScript.ownerDocument;
+          const parent = svg.querySelector("#petals");
+          for(let i=0; i<18; i++){
+            const g = svg.createElementNS("http://www.w3.org/2000/svg","g");
+            g.setAttribute("transform",`rotate(${i*20})`);
+            const p = svg.createElementNS("http://www.w3.org/2000/svg","path");
+            p.setAttribute("d","M0,-160 C18,-120 36,-120 54,-160");
+            g.appendChild(p);
+            parent.appendChild(g);
+          }
+        })();
+      ]]></script>
+    </svg>
+  </div>
 
   <!-- ヘッダー：タイトルとナビゲーション -->
   <header class="header-wrap">
-    <h1 class="site-title">Sasaki Tasuku</h1>
+    <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
     <nav class="site-nav">
-      <a href="#intro">Home</a>
-      <a href="#past">Past</a>
-      <a href="#present">Present</a>
-      <a href="#hobby">Hobby</a>
-      <a href="#future">Future</a>
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="strength.html">Strength</a>
+      <a href="goals.html">Goals</a>
     </nav>
   </header>
 
-  <!-- メインコンテンツ -->
+  <!-- メイン写真とメッセージ -->
   <main>
-    <!-- セクション1: イントロダクション -->
-    <section id="intro" class="section intro-section">
-      <div class="profile-photo" style="background-image:url('images/profile.jpeg')"></div>
-      <h2 class="section-title">はじめまして、佐々木輔です</h2>
-      <p class="intro-text">
-        CRM Unitで顧客理解を深める仕事をしています。<br>
-        データと向き合い、人と向き合い、価値を創造する。<br>
-        それが私のストーリーです。
-      </p>
-    </section>
-
-    <!-- セクション2: 過去 - キャリアの変遷 -->
-    <section id="past" class="section past-section">
-      <h2 class="section-title">過去：ECの世界でデータと向き合った日々</h2>
-      <div class="content-box">
-        <div class="image-container">
-          <img src="images/data_driven.jpg" alt="データ分析のイメージ">
-        </div>
-        <div class="text-container">
-          <p>
-            前職ではEC運用やWEB広告を担当し、韓国ブランドや古着系ECなどのデータ分析を行っていました。
-            数字の裏にあるユーザーの心理を読み解き、売上向上のための施策を考え続けた日々。
-            そこで培った「データを読む力」が、今の私の基盤となっています。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- セクション3: 現在 - 現在の仕事と強み -->
-    <section id="present" class="section present-section">
-      <h2 class="section-title">現在：多面的な顧客理解を目指して</h2>
-      <div class="content-box">
-        <p class="intro-paragraph">
-          現在は、より多面的に顧客理解を深めることを目指しています。
-          前職で磨いたスキルを活かしながら、新しい価値を創造していきます。
-        </p>
-        
-        <div class="strength-grid">
-          <div class="strength-card">
-            <h3>分析と洞察</h3>
-            <p>
-              EC運用経験を通じて、データを"読む力"を磨いてきました。
-              数字だけでなく、その裏にあるユーザー心理を想像しながら、課題を具体的に捉えます。
-            </p>
-          </div>
-          
-          <div class="strength-card">
-            <h3>共感と論理の両立</h3>
-            <p>
-              クライアントや作り手の想いに寄り添いながら、客観的な分析も重視します。
-              感性と数字のバランスを取りながら最適な方向性を導くことが得意です。
-            </p>
-          </div>
-          
-          <div class="strength-card">
-            <h3>学びを継続する姿勢</h3>
-            <p>
-              新しい知識を吸収し、すぐ実務で試して形にすることを意識しています。
-              常にアップデートを続け、より良い発信につなげていきます。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- セクション4: プライベート - 趣味の世界 -->
-    <section id="hobby" class="section hobby-section">
-      <h2 class="section-title">プライベート：土とスパイスに魅せられて</h2>
-      <div class="content-box">
-        <p class="intro-paragraph">
-          仕事以外の時間は、陶芸と南インド料理に没頭しています。
-          パートナーが陶芸家なので、作品撮影や発信を一緒に行っています。
-          休日はスパイス調合やカレー屋巡りを楽しんでいます。
-        </p>
-        
-        <!-- 写真カルーセル -->
-        <div class="carousel-wrapper">
-          <div class="carousel" aria-label="趣味の写真">
-            <img src="images/pottery.jpg" alt="陶芸作品1">
-            <img src="images/pottery2.jpg" alt="陶芸作品2">
-            <img src="images/potterypiece.jpeg" alt="陶芸作品3">
-            <img src="images/jomon.jpg" alt="縄文土器">
-            <img src="images/biriyani.jpeg" alt="ビリヤニ">
-            <img src="images/dal.jpeg" alt="ダル">
-            <img src="images/street.jpg" alt="街の風景">
-            <img src="images/yob.jpg" alt="Year of Birth">
-            <img src="images/20251007-100058.jpeg" alt="料理">
-            <img src="images/836ef8d9-23b2-4b08-af2d-ac8ff7091dc7.png" alt="作品">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- セクション5: 未来 - これからの目標 -->
-    <section id="future" class="section future-section">
-      <h2 class="section-title">未来：データと顧客理解を融合させた、新しい価値創造へ</h2>
-      <div class="content-box">
-        <div class="goals-container">
-          <div class="goal-card">
-            <h3>短期目標（〜半年）</h3>
-            <p>
-              HTML/CSS/JavaScriptの基礎を身につけ、マーケティング分析のフローを理解します。
-              数字から改善策を考える習慣をつけ、日々の業務に活かしていきます。
-            </p>
-          </div>
-          
-          <div class="goal-card">
-            <h3>中期目標（〜1年）</h3>
-            <p>
-              クライアントの課題解決にデータ活用で貢献し、陶芸ブランドの発信戦略に携わります。
-              習得した知識をチーム内で共有・実践し、組織全体の成長に寄与します。
-            </p>
-          </div>
-          
-          <div class="goal-card">
-            <h3>長期目標（2〜3年）</h3>
-            <p>
-              分析×企画の両面から提案できるマーケターになります。
-              顧客とブランドをつなぐ「体験デザイン」に携わり、
-              社会的・文化的な価値を伝えるプロジェクトに参画します。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="center-photo" style="background-image:url('images/profile.jpeg')"></div>
+    <p class="tagline">「データ」と「人」を繋ぐ</p>
   </main>
 
   <!-- フッター -->

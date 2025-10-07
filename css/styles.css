@@ -1,29 +1,23 @@
 /* ===== 全体設定 ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   background: radial-gradient(circle at center, #5e0f0d, #2d0605);
   color: #f7e3a1;
   text-align: center;
-  line-height: 1.8;
-  scroll-behavior: smooth;
 }
 
 /* ===== 背景の曼荼羅 ===== */
 .mandala {
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(247, 227, 161, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.3;
+  background-image: url('../images/mandala.svg'); /* 任意の模様画像 */
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
   z-index: -1;
-  animation: spin 180s linear infinite;
+  animation: spin 120s linear infinite;
 }
 
 @keyframes spin {
@@ -31,316 +25,135 @@ body {
 }
 
 /* ===== ヘッダー ===== */
-.header-wrap {
-  background: rgba(181, 27, 22, 0.9);
+header {
+  background: rgba(181, 27, 22, 0.85);
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(247, 227, 161, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(247, 227, 161, 0.3);
 }
 
-.site-title {
+h1 {
   font-family: "Cinzel Decorative", serif;
-  margin: 0 0 15px 0;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 10px rgba(247, 227, 161, 0.5);
-}
-
-.site-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.site-nav a {
-  color: #f7e3a1;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.site-nav a:hover {
-  background: rgba(247, 227, 161, 0.2);
-  color: #fff;
-  text-shadow: 0 0 8px #f7e3a1;
-  transform: translateY(-2px);
-}
-
-/* ===== メインコンテンツ ===== */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.section {
-  margin: 80px 0;
-  padding: 40px 20px;
-  border-radius: 15px;
-  background: rgba(181, 27, 22, 0.2);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.section:hover {
-  transform: translateY(-5px);
-}
-
-.section-title {
-  font-family: "Cinzel Decorative", serif;
+  margin: 0;
   font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: #f7e3a1;
-  text-shadow: 0 0 10px rgba(247, 227, 161, 0.5);
   letter-spacing: 0.05em;
 }
 
-/* ===== イントロセクション ===== */
-.intro-section {
-  text-align: center;
-}
-
-.profile-photo {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 5px solid #f7e3a1;
-  margin: 0 auto 30px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 30px rgba(247, 227, 161, 0.5);
-  transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-  transform: scale(1.05);
-}
-
-.intro-text {
-  font-size: 1.2rem;
-  line-height: 2;
-  color: rgba(247, 227, 161, 0.95);
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ===== コンテンツボックス ===== */
-.content-box {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.intro-paragraph {
-  font-size: 1.1rem;
-  line-height: 2;
-  margin-bottom: 40px;
-  text-align: center;
-  color: rgba(247, 227, 161, 0.9);
-}
-
-/* ===== 過去セクション ===== */
-.past-section .content-box {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-}
-
-.image-container {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.image-container img:hover {
-  transform: scale(1.05);
-}
-
-.text-container {
-  width: 100%;
-  max-width: 800px;
-}
-
-.text-container p {
-  font-size: 1.1rem;
-  line-height: 2;
-  color: rgba(247, 227, 161, 0.9);
-}
-
-/* ===== 現在セクション - 強みグリッド ===== */
-.strength-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.strength-card {
-  background: rgba(94, 15, 13, 0.5);
-  padding: 25px;
-  border-radius: 10px;
-  border: 2px solid rgba(247, 227, 161, 0.3);
-  transition: all 0.3s ease;
-}
-
-.strength-card:hover {
-  border-color: #f7e3a1;
-  box-shadow: 0 5px 20px rgba(247, 227, 161, 0.3);
-  transform: translateY(-5px);
-}
-
-.strength-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+nav a {
   color: #f7e3a1;
+  margin: 0 15px;
+  text-decoration: none;
   font-weight: bold;
 }
 
-.strength-card p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(247, 227, 161, 0.85);
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #f7e3a1;
 }
 
-/* ===== 趣味セクション - カルーセル ===== */
-.carousel-wrapper {
+/* ===== 真ん中の写真 ===== */
+.center-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px double #f7e3a1;
+  margin: 60px auto 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 15px rgba(247, 227, 161, 0.4);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: rgba(247, 227, 161, 0.9);
+}
+
+/* ===== カルーセル（横スライド） ===== */
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  gap: 15px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.carousel img {
+  height: 100px; /* 画像の高さをさらに小さく調整 */
+  width: auto; /* 幅は自動調整 */
+  object-fit: contain; /* 画像全体が表示されるように調整 */
+  border-radius: 8px;
+  border: 2px solid #f7e3a1;
+  box-shadow: 0 0 10px rgba(247, 227, 161, 0.2);
+  transition: transform 0.4s;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== フッター ===== */
+footer {
   margin-top: 40px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-top: 1px solid rgba(247, 227, 161, 0.3);
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px rgba(247, 227, 161, 0.5);
 }
 
 .carousel {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
+  position: relative;
   width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;  /* ←これが超大事。はみ出しを隠す */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(247, 227, 161, 0.3);
 }
 
 .carousel img {
   width: 100%;
-  height: 400px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ===============================
+   カルーセルの見た目（スマホ対応）
+================================= */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(247, 227, 161, 0.3);
+}
+
+/* 各画像スライド */
+.carousel img {
+  width: 100%;
+  height: 60vh;               /* 高さを画面の60%に設定（スマホでも大きく） */
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 0;
+  transition: transform 0.5s ease;
 }
 
-/* ===== 未来セクション - 目標カード ===== */
-.goals-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.goal-card {
-  background: rgba(94, 15, 13, 0.5);
-  padding: 30px;
-  border-radius: 10px;
-  border: 2px solid rgba(247, 227, 161, 0.3);
-  transition: all 0.3s ease;
-}
-
-.goal-card:hover {
-  border-color: #f7e3a1;
-  box-shadow: 0 5px 20px rgba(247, 227, 161, 0.3);
-  transform: translateY(-5px);
-}
-
-.goal-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: #f7e3a1;
-  font-weight: bold;
-}
-
-.goal-card p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(247, 227, 161, 0.85);
-}
-
-/* ===== フッター ===== */
-.site-footer {
-  margin-top: 80px;
-  padding: 30px;
-  border-top: 2px solid rgba(247, 227, 161, 0.3);
-  font-family: "Cinzel Decorative", serif;
-  font-size: 1.2rem;
-  text-shadow: 0 0 10px rgba(247, 227, 161, 0.5);
-  background: rgba(181, 27, 22, 0.3);
-}
-
-/* ===== レスポンシブ対応 ===== */
+/* --- スマホ用調整（縦長画面対策） --- */
 @media (max-width: 768px) {
-  .site-title {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-  }
-
-  .profile-photo {
-    width: 200px;
-    height: 200px;
-  }
-
-  .intro-text {
-    font-size: 1rem;
-  }
-
-  .strength-grid,
-  .goals-container {
-    grid-template-columns: 1fr;
-  }
-
   .carousel img {
-    height: 300px;
-  }
-
-  .site-nav {
-    gap: 10px;
-  }
-
-  .site-nav a {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    height: 50vh;             /* スマホでは少し小さく（縦向きに合わせる） */
   }
 }
 
 @media (max-width: 480px) {
-  .site-title {
-    font-size: 1.3rem;
-  }
-
-  .section {
-    margin: 40px 0;
-    padding: 25px 15px;
-  }
-
   .carousel img {
-    height: 250px;
-  }
-
-  .profile-photo {
-    width: 180px;
-    height: 180px;
+    height: 45vh;             /* 超小型スマホ用 */
+    border-radius: 0;         /* 枠の丸みを減らす */
   }
 }
