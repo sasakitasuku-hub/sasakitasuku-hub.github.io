@@ -10,18 +10,20 @@
 <body>
   <!-- ヘッダー -->
   <header>
-    <h1>Sasaki Tasuku Portfolio</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="goals.html">Goals</a>
-    </nav>
+    <div class="header-inner">
+      <h1>Sasaki Tasuku Portfolio</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="goals.html">Goals</a>
+      </nav>
+    </div>
   </header>
 
   <!-- メイン -->
   <main>
     <section class="intro-section">
-      <div class="center-photo" style="background-image:url('images/profile.jpg')"></div>
+      <div class="center-photo" style="background-image:url('images/profile.jpg')" aria-label="profile photo" role="img"></div>
       <h2 class="tagline">Craft • Observe • Convey</h2>
 
       <p class="intro-text">
@@ -36,15 +38,15 @@
     <!-- カルーセル -->
     <section class="carousel-container">
       <h2>Photo Gallery</h2>
-      <div class="carousel">
-        <img src="images/1.png" alt="1">
-        <img src="images/5.png" alt="5">
-        <img src="images/2.png" alt="2">
-        <img src="images/3.png" alt="3">
-        <img src="images/4.png" alt="4">
-        <img src="images/6.png" alt="6">
-      　 <img src="images/pottery.jpg" alt="陶芸作品">
-        <img src="images/pottery2.jpg" alt="陶芸作品">
+      <div class="carousel" aria-label="photo gallery" role="region">
+        <img src="images/1.png" alt="1" loading="lazy">
+        <img src="images/5.png" alt="5" loading="lazy">
+        <img src="images/2.png" alt="2" loading="lazy">
+        <img src="images/3.png" alt="3" loading="lazy">
+        <img src="images/4.png" alt="4" loading="lazy">
+        <img src="images/6.png" alt="6" loading="lazy">
+        <img src="images/pottery.jpg" alt="陶芸作品" loading="lazy">
+        <img src="images/pottery2.jpg" alt="陶芸作品" loading="lazy">
       </div>
     </section>
   </main>
