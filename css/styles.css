@@ -1,227 +1,109 @@
-/* ==============================
-   Sasaki Tasuku Portfolio
-   styles.css（統一デザイン）
-   ============================== */
-
-/* ===== ベース設定 ===== */
 body {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0;
-  background: #faf8f0;
-  color: #333;
-  line-height: 1.7;
-}
-
-/* ===== ヘッダー ===== */
-header {
+  background: #faf5e6;
+  color: #432;
   text-align: center;
-  background: #b37a2d;
-  color: white;
-  padding: 20px;
 }
 
+/* ヘッダー */
+header {
+  background: linear-gradient(90deg, #c5975b, #d8b86e);
+  padding: 15px 0;
+  color: #fff8e1;
+}
 header h1 {
   margin: 0;
   font-size: 1.8rem;
-  letter-spacing: 0.05em;
 }
-
-nav {
-  margin-top: 10px;
-}
-
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 10px;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: opacity 0.3s;
 }
-
 nav a:hover {
-  color: #ffe9b1;
+  opacity: 0.7;
 }
 
-nav a.active {
-  text-decoration: underline;
+/* メイン */
+.intro-section {
+  padding: 40px 20px;
 }
-
-/* ===== メイン共通 ===== */
-main {
-  text-align: center;
-  padding: 30px 15px;
-}
-
-/* ===== トップ写真エリア ===== */
 .center-photo {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  margin: 0 auto 20px;
   background-size: cover;
   background-position: center;
-  border: 5px solid #f1d48a;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  border: 3px solid #d4b56a;
 }
-
 .tagline {
-  font-size: 1.3rem;
-  color: #704214;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.intro-section p {
-  margin-top: 10px;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-/* ===== カルーセルコンテナ ===== */
-.carousel-container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 25px;
-  background: rgba(255, 252, 240, 0.95);
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.carousel-container h2 {
   font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: #704214;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  color: #6b451f;
+}
+.intro-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a3a24;
 }
 
-/* ===========================
-   Carousel スタイル（修正版）
-   =========================== */
+/* カルーセル */
 .carousel-container {
-  text-align: center;
-  background-color: #fefaf0;
+  background: #fffaf2;
   padding: 40px 0;
+  border-top: 2px solid #e6d5a4;
 }
-
 .carousel-container h2 {
-  font-size: 1.8rem;
-  color: #6b3e26;
-  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #6b451f;
+  margin-bottom: 20px;
 }
 
 .carousel {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 10px 20px;
+  justify-content: center;
   scroll-behavior: smooth;
 }
-
 .carousel img {
   flex: 0 0 auto;
-  width: 300px;
-  height: 200px;
+  width: 240px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.6;
   scroll-snap-align: center;
-  transition: transform 0.3s ease;
+}
+.carousel img.center {
+  transform: scale(1.2);
+  opacity: 1;
 }
 
-.carousel img:hover {
-  transform: scale(1.05);
-}
-
-/* スマホ向け調整 */
-@media (max-width: 768px) {
-  .carousel img {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-  }
-}
-
-/* ===== ページタイトル・共通ボックス ===== */
-.page-title {
-  font-size: 1.6rem;
-  color: #704214;
-  margin-top: 40px;
-  border-left: 5px solid #f8b400;
-  padding-left: 10px;
-  display: inline-block;
-  text-align: left;
-}
-
-.content-box {
-  max-width: 800px;
-  margin: 30px auto;
-  background: #fffdf7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  text-align: left;
-}
-
-.content-box h3 {
-  color: #a37025;
-  margin-top: 0;
-}
-
-.content-box ul {
-  padding-left: 20px;
-}
-
-.content-box li {
-  margin-bottom: 8px;
-}
-
-/* ===== 画像の枠フィット設定 ===== */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-.content-box img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* ===== フッター ===== */
+/* フッター */
 footer {
-  text-align: center;
+  background: #f4ecd0;
   padding: 20px;
-  color: #555;
+  color: #775;
   font-size: 0.9rem;
-  background: #f6e8c3;
-  border-top: 1px solid #ddd;
 }
 
-/* ===== スマホ対応 ===== */
+/* スマホ対応 */
 @media (max-width: 600px) {
-  .center-photo {
-    width: 150px;
-    height: 150px;
-  }
-
   .carousel img {
-    width: 80%;
+    width: 70%;
     height: auto;
   }
-
-  .carousel-container {
-    margin: 40px 10px;
-    padding: 15px;
-  }
-
-  .content-box {
-    margin: 20px 10px;
-    padding: 15px;
+  .center-photo {
+    width: 140px;
+    height: 140px;
   }
 }
