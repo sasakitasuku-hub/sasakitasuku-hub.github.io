@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sasaki Tasuku Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <!-- mandala SVG (精密タイプ) -->
+  <!-- 背景の曼荼羅（精密タイプ） -->
   <div class="mandala" aria-hidden="true">
-    <!-- simple but detailed SVG mandala, stroke-only for elegance -->
-    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-      <g fill="none" stroke="black" stroke-width="1" opacity="0.9">
-        <circle cx="300" cy="300" r="140"/>
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#f7e3a1" stroke-width="1">
+        <circle cx="300" cy="300" r="140" />
         <g transform="translate(300,300)">
-          <!-- radial petals -->
-          <g stroke-width="1">
-            <!-- repeat petals -->
-            <g id="petal" transform="rotate(0)">
-              <path d="M0,-160 C18,-120 36,-120 54,-160" />
-            </g>
-            <!-- clone multiple rotations -->
-            <g id="petals"></g>
-          </g>
+          <!-- 花びらを18方向に配置 -->
+          <g id="petals"></g>
         </g>
       </g>
       <script type="application/ecmascript"><![CDATA[
         (function(){
-          var svg = document.currentScript.ownerDocument;
-          var parent = svg.querySelector('#petals');
-          for(var i=0;i<18;i++){
-            var g = svg.createElementNS('http://www.w3.org/2000/svg','g');
-            g.setAttribute('transform','rotate(' + (i*(360/18)) + ')');
-            var p = svg.createElementNS('http://www.w3.org/2000/svg','path');
+          const svg = document.currentScript.ownerDocument;
+          const parent = svg.querySelector('#petals');
+          for(let i=0; i<18; i++){
+            const g = svg.createElementNS('http://www.w3.org/2000/svg','g');
+            g.setAttribute('transform',`rotate(${i*20})`);
+            const p = svg.createElementNS('http://www.w3.org/2000/svg','path');
             p.setAttribute('d','M0,-160 C18,-120 36,-120 54,-160');
             g.appendChild(p);
             parent.appendChild(g);
@@ -42,46 +35,41 @@
     </svg>
   </div>
 
+  <!-- ヘッダー：タイトルとナビゲーション -->
   <header class="header-wrap">
-    <div class="site-header">
-      <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="strength.html">Strength</a>
-        <a href="goals.html">Goals</a>
-      </nav>
-    </div>
+    <h1 class="site-title">Sasaki Tasuku Portfolio</h1>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="strength.html">Strength</a>
+      <a href="goals.html">Goals</a>
+    </nav>
   </header>
 
-  
-
-  <!-- center portrait -->
+  <!-- メイン写真とメッセージ -->
   <main>
-    <div class="container reveal">
-      <div class="center-image" style="background-image:url('images/ボロ着ディズニー.jpeg')" aria-hidden="true"></div>
-      <p style="text-align:center; margin-top:18px; color:rgba(247,227,161,0.9)">Craft • Observe • Convey</p>
-    </div>
+    <div class="center-image" style="background-image:url('images/profile.jpeg')"></div>
+    <p class="tagline">Craft • Observe • Convey</p>
   </main>
 
-  <!-- carousel -->
-  <div class="carousel" role="region" aria-label="Hobby carousel">
-    <img src="images/VC.png" alt="1">
-    <img src="images/french.png" alt="2">
-    <img src="images/meals.jpeg" alt="3">
-    <img src="images/dal.jpeg" alt="4">
-     <img src="images/biriyani.jpeg" alt="5">
-     <img src="images/データドリブンマーケ.jpg" alt="6">
-     <img src="images/ヨブ.jpg" alt="7">
-    <img src="images/ムントゥリャサ通りで.jpg" alt="8">
-    <img src="images/火炎式土器.jpg" alt="9">
-    <img src="images/pieceofpottery.jpeg" alt="10">
-    <img src="images/象嵌一輪挿し.jpg" alt="11">
-    <img src="images/象嵌一輪挿し陶衣オブジェ.jpg" alt="12">
-  </div>
+  <!-- 写真カルーセル -->
+  <section class="carousel" aria-label="Hobby carousel">
+    <img src="images/VC.png" alt="古着メディア記事">
+    <img src="images/french.png" alt="フランス古着">
+    <img src="images/meals.jpeg" alt="ミールス">
+    <img src="images/dal.jpeg" alt="ダルバート">
+    <img src="images/biriyani.jpeg" alt="ビリヤニ">
+    <img src="images/data_driven.jpg" alt="マーケ分析">
+    <img src="images/yob.jpg" alt="ヨブの像">
+    <img src="images/street.jpg" alt="ムントゥリャサ通り">
+    <img src="images/jomon.jpg" alt="火炎式土器">
+    <img src="images/pottery.jpg" alt="陶器作品">
+  </section>
 
+  <!-- フッター -->
   <footer class="site-footer">ॐ Peace in Creation</footer>
 
+  <!-- JS -->
   <script src="js/scripts.js"></script>
 </body>
 </html>
