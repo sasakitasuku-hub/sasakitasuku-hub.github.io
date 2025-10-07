@@ -1,31 +1,35 @@
 // ===============================
-// 自動ループするカルーセル（ガタつき防止版）
+// なめらかループカルーセル（transform方式）
 // ===============================
-
 document.addEventListener("DOMContentLoaded", function() {
   const carousel = document.querySelector(".carousel");
-  const images = carousel.querySelectorAll("img");
-  const imgWidth = images[0].offsetWidth + 20; // 画像+余白
-  let scrollPos = 0;
+  const slides = carousel.querySelectorAll("img");
 
-  // --- カルーセル用複製 ---
-  // 無限ループっぽくするために同じ画像をもう一周分コピー
-  images.forEach(img => {
-    const clone = img.cloneNode(true);
-    carousel.appendChild(clone);
+  // スライドの基本設定
+  let currentIndex = 0;
+  const slideCount = slides.length;
+
+  // 画像を横並びに設定
+  carousel.style.display = "flex";
+  carousel.style.transition = "transform 0.6s ease-in-out";
+  carousel.style.width = `${slideCount * 100}%`;
+
+  slides.forEach(slide => {
+    slide.style.width = `${100 / slideCount}%`;
+    slide.style.flexShrink = "0";
   });
 
-  // --- 自動スクロール ---
-  function autoScroll() {
-    scrollPos += 1.2; // スピード調整
-    if (scrollPos >= imgWidth * images.length) {
-      // 半分（オリジナル画像分）進んだらリセット
-      scrollPos = 0;
-      carousel.scrollLeft = 0;
+  // 自動スライド
+  setInterval(() => {
+    currentIndex++;
+    if (currentIndex >= slideCount) {
+      currentIndex = 0;
+      carousel.style.transition = "none"; // リセット時のカクつき防止
+      carousel.style.transform = `translateX(0%)`;
+      void carousel.offsetWidth; // ブラウザの再描画を強制
+      carousel.style.transition = "transform 0.6s ease-in-out";
+    } else {
+      carousel.style.transform = `translateX(-${(100 / slideCount) * currentIndex}%)`;
     }
-    carousel.scrollLeft = scrollPos;
-    requestAnimationFrame(autoScroll);
-  }
-
-  autoScroll();
+  }, 3000); // 3秒ごとにスライド
 });
