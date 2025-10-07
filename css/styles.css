@@ -52,41 +52,126 @@ nav a:hover {
   color: #4a3a24;
 }
 
-/* カルーセル */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  background: #faf5e6;
+  color: #432;
+  text-align: center;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: linear-gradient(90deg, #c5975b, #d8b86e);
+  padding: 15px 0;
+  color: #fff8e1;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ===== 自己紹介部分 ===== */
+.intro-section {
+  padding: 40px 20px;
+  background: #f9f5e9;
+}
+.center-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #d4b56a;
+}
+.tagline {
+  font-size: 1.4rem;
+  color: #6b451f;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.intro-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a3a24;
+}
+
+/* ===== カルーセル部分 ===== */
 .carousel-container {
   background: #fffaf2;
-  padding: 40px 0;
+  padding: 50px 0;
   border-top: 2px solid #e6d5a4;
 }
 .carousel-container h2 {
   font-size: 1.6rem;
   color: #6b451f;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .carousel {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px;
-  padding: 10px 20px;
-  justify-content: center;
+  gap: 25px;
+  padding: 20px 40px;
+  justify-content: flex-start;
+  align-items: center;
   scroll-behavior: smooth;
 }
+
+/* ==== 画像サイズ・見切れ防止 ==== */
 .carousel img {
   flex: 0 0 auto;
-  width: 240px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
+  width: 280px;       /* 以前より少し大きく */
+  height: 200px;      /* 固定の高さを設定 */
+  object-fit: contain; /* cover → contain に変更（見切れ防止） */
+  background-color: #fffaf2;
+  border-radius: 12px;
   transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0.6;
+  opacity: 0.7;
   scroll-snap-align: center;
+  border: 1px solid #e6d5a4;
 }
+
 .carousel img.center {
-  transform: scale(1.2);
+  transform: scale(1.15);
   opacity: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== フッター ===== */
+footer {
+  background: #f4ecd0;
+  padding: 20px;
+  color: #775;
+  font-size: 0.9rem;
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 600px) {
+  .carousel img {
+    width: 85%;
+    height: auto;
+  }
+  .center-photo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 
 /* フッター */
 footer {
