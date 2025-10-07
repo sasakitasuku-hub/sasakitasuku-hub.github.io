@@ -1,0 +1,1 @@
+Place your 1600x800 images here with the filenames used in index.html (1.png,2.png,3.png,4.png,5.png,6.png,pottery.jpg,pottery2.jpg). Larger images will crop via object-fit:cover.
