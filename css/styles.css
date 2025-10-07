@@ -80,7 +80,7 @@ html, body {
 }
 
 /* ------------------------------
-   メイン画像
+   メイン画像（中央）
 --------------------------------*/
 .center-image {
   width: 300px;
@@ -99,30 +99,35 @@ html, body {
 }
 
 /* ------------------------------
-   カルーセル
+   カルーセル（自動スライド対応）
 --------------------------------*/
 .carousel {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
-  gap: 15px;
-  padding: 20px;
-  justify-content: center;
+  gap: 20px;
+  padding: 20px 30px;
+  justify-content: flex-start;
+  align-items: center;
   scrollbar-width: none;
 }
+
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
 .carousel img {
-  height: 200px;
-  border-radius: 10px;
-  border: 2px solid #f7e3a1;
+  height: 220px;
   flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid #f7e3a1;
+  box-shadow: 0 0 12px rgba(247, 227, 161, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .carousel img:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 15px rgba(247, 227, 161, 0.4);
+  box-shadow: 0 0 15px rgba(247, 227, 161, 0.6);
 }
 
 /* ------------------------------
@@ -141,7 +146,7 @@ html, body {
 }
 
 /* ------------------------------
-   アニメーション
+   スクロール時のアニメーション
 --------------------------------*/
 .reveal {
   opacity: 0;
