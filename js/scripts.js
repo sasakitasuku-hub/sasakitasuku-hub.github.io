@@ -1,17 +1,29 @@
 // js/scripts.js
-// Carousel (index) + simple reveal on scroll
+// ===============================
+// カルーセルを自動でスライドさせる
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
-  // Carousel
-  const carouselImgs = document.querySelectorAll('.carousel img');
-  if (carouselImgs.length){
-    let cur = 0;
-    carouselImgs[cur].classList.add('active');
-    setInterval(()=> {
-      carouselImgs[cur].classList.remove('active');
-      cur = (cur+1) % carouselImgs.length;
-      carouselImgs[cur].classList.add('active');
-    }, 3500);
+  const carousel = document.querySelector(".carousel");
+  if (!carousel) return; // 安全対策
+
+  let scrollAmount = 0;
+  const step = 2; // スクロール速度（小さいほどゆっくり）
+  const intervalTime = 20; // ミリ秒単位（20msで1フレーム）
+
+  function autoScroll() {
+    scrollAmount += step;
+    carousel.scrollLeft = scrollAmount;
+
+    // 最後まで行ったら戻る
+    if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+      carousel.scrollLeft = 0;
+      scrollAmount = 0;
+    }
   }
+
+  setInterval(autoScroll, intervalTime);
+});
+
 
   // reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
