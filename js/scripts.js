@@ -33,22 +33,6 @@
   requestAnimationFrame(tick);
 })();
 
-// Copy to clipboard (for Slack ID / email)
-(function(){
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    if(t.matches('[data-copy]')){
-      var text = t.getAttribute('data-copy');
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(text).then(function(){
-          t.textContent = 'コピーしました';
-          setTimeout(function(){ t.textContent='コピー'; }, 1200);
-        });
-      }
-    }
-  });
-})();
-
 // Back to top
 (function(){
   var btn=document.createElement('button');
