@@ -33,7 +33,7 @@ main{width:var(--wrap);margin:0 auto;padding:calc(var(--space)*1.25) 0}
 
 /* Hero */
 .hero{display:grid;grid-template-columns:220px 1fr;gap:var(--space);align-items:center;margin-bottom:22px}
-.hero .photo{width:220px;height:220px;border-radius:50%;background:#111 url('images/profile.jpg') center/cover no-repeat;border:1px solid var(--line);box-shadow:var(--shadow)}
+.hero .photo{width:220px;height:220px;border-radius:50%;background:#111 url('../images/profile.jpg') center/cover no-repeat;border:1px solid var(--line);box-shadow:var(--shadow)}
 .hero .tag{font-weight:700;font-size:clamp(20px,3vw,28px);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;margin:0}
 .hero p{margin:0;color:var(--sub)}
 @media(max-width:720px){.hero{grid-template-columns:1fr}.hero .photo{justify-self:center}}
