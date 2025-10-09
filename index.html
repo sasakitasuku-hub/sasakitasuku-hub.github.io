@@ -1,26 +1,93 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home | Sasaki Tasuku Portfolio</title>
-<link rel="stylesheet" href="css/styles.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLBBH9YZM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RXLBBH9YZM');
+</script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7S8NGTG');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sasaki Tasuku Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="ものの背景を知り、言葉とデータで訳します。">
+  <meta property="og:title" content="Sasaki Tasuku Portfolio">
+  <meta property="og:description" content="ものの背景を知り、言葉とデータで訳します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta name="theme-color" content="#0f1221">
+  <meta name="twitter:card" content="summary_large_image">
+  
 </head>
 <body>
-<header><h1>Sasaki Tasuku Portfolio</h1></header>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7S8NGTG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+  <div class="header-inner">
+    <h1>Sasaki Tasuku Portfolio</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="strength.html">Strength</a>
+      <a href="goals.html">Goals</a>
+    </nav>
+  </div>
+</header>
 <main>
-  <h2>Home Page</h2>
-  <p>ここにhomeページの内容が入ります。</p>
-
-  <!-- Like button section -->
-  <section class="box reveal like-box" aria-label="このページのリアクション">
-    <button class="like-btn" data-like-button data-content-id="home" aria-pressed="false">
-      👍 いいね
-    </button>
-    <span class="like-count" aria-live="polite" aria-atomic="true">0</span>
+  <section class="hero">
+    <div class="photo" aria-label="profile photo" role="img"></div>
+    <div>
+      <h2 class="tag">Craft • Observe • Convey</h2>
+      <p>ものの背景を知り、言葉とデータで訳します。
+    </div>
   </section>
+
+  <section class="box reveal">
+    <h3>About This Site</h3>
+    <p>このサイトは、私の軸である<b>「観察 → 翻訳 → 表現」</b>をまとめたものです。<br>
+       Profile は原点、Strength は積み上げてきた力、Goals はこれからの話です。</p>
+  </section>
+
+  <section class="box reveal">
+    <h3>目指したい像</h3>
+    <div class="grid3">
+      <div><h4>📊 Data & Ads</h4><p>数字の背景を読み取り、施策に落とし込める人。</p></div>
+      <div><h4>🎨 Craft & Media</h4><p>つくり手の魅力を、写真と言葉で伝えられる人。</p></div>
+      <div><h4>✍️ Story & Design</h4><p>データと言葉で「伝わる」体験を設計できる人。</p></div>
+    </div>
+  </section>
+
+  <section class="box reveal">
+    <h3>Chat Starters</h3>
+    <div class="chips">
+      <button class="chip" title="最近観た映画や好きな監督の話、ぜひ。">🎬 映画</button>
+      <button class="chip" title="カレーの名店やスパイス談義、歓迎です。">🍛 カレー</button>
+      <button class="chip" title="ワークウェアやその歴史">🧵 オンボロワークウェア</button>
+      <button class="chip" title="かっこいい置物や作り込まれた道具について">🏺 手工芸品</button>
+    </div>
+    <p class="micro">※ 社内チャットやメールでゆるくどうぞ。</p>
+  </section>
+
+  <div class="box reveal">
+    <h3>読む順番のおすすめ</h3>
+    <p class="lead">Profile（原点） → Strength（積み上げた力） → Goals（これから）</p>
+    <p><a href="profile.html">まずは Profile へ進む →</a></p>
+  </div>
 </main>
 <footer>© 2025 Sasaki Tasuku</footer>
-<script src="js/scripts.js"></script>
+<script defer src="js/scripts.js"></script>
 </body>
 </html>
