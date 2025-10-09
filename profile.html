@@ -1,95 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLBBH9YZM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RXLBBH9YZM');
-</script>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K7S8NGTG');</script>
-<!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Profile | Sasaki Tasuku Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <meta name="description" content="原点と価値観。数字の先にある人の行動や気持ちを読み取る">
-  <meta property="og:title" content="Profile | Sasaki Tasuku">
-  <meta property="og:description" content="原点と価値観。数字の先にある人の行動や気持ちを読み取る">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="pottery2.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile | Sasaki Tasuku Portfolio</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7S8NGTG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<header>
-  <div class="header-inner">
-    <h1>Sasaki Tasuku Portfolio</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html" class="active">Profile</a>
-      <a href="strength.html">Strength</a>
-      <a href="goals.html">Goals</a>
-    </nav>
-  </div>
-</header>
-
+<header><h1>Sasaki Tasuku Portfolio</h1></header>
 <main>
-  <h2 class="page-title">Profile（はじまり）</h2>
+  <h2>Profile Page</h2>
+  <p>ここにprofileページの内容が入ります。</p>
 
-  <div class="box">
-    <p>はじめまして。CRM Unit の佐々木 輔です。<br>
-    前職では、韓国ブランドや古着 EC のクライアントのもとで、<b>データ分析と広告運用</b>を担当していました。<br>
-    数字の先にある「人の行動や気持ち」を想像し、<b>どうすれば届くか</b>を考えるのが好きです。</p>
-
-    <p>いまは入社まもない時期。業務の流れや研修を通じて必要なスキルを把握中です。<br>
-    早く貢献できるよう、土台づくりを進めます。</p>
-
-    <p>映画とカレー、そして海外のワークウェアが好きです。<br>
-    陶芸家のパートナーの作品撮影や発信も手伝っており、<br>
-    「<b>つくる人の想いをどう伝えるか</b>」というテーマを、仕事にも重ねていました。</p>
-  </div>
-
-  <section class="carousel-container">
-    <div class="carousel-head">
-      <h3>好きなもの、やったこと</h3>
-    </div>
-    <div class="carousel" aria-label="photo gallery" role="region">
-      <div class="slide hover-lift"><img src="images/1.png" alt="gallery 1" loading="lazy"></div>
-      <div class="slide hover-lift"><img src="images/2.png" alt="gallery 2" loading="lazy"></div>
-      <div class="slide hover-lift"><img src="images/3.png" alt="gallery 3" loading="lazy"></div>
-      <div class="slide hover-lift"><img src="images/4.png" alt="gallery 4" loading="lazy"></div>
-      <div class="slide hover-lift"><img src="images/pottery.jpg" alt="pottery 1" loading="lazy"></div>
-      <div class="slide hover-lift"><img src="images/pottery2.jpg" alt="pottery 2" loading="lazy"></div>
-    </div>
-  </section>
-
-  <section class="box reveal">
-    <h3>Work Style</h3>
-    <ul class="check">
-      <li>話しながら整えるのが好きです。短く当てて、試して、次へ。</li>
-      <li>言語化は積極的に。メモ → 共有 → 早めに擦り合わせ。</li>
-      <li>数字と感覚の両輪。グラフもサンプルも、両方見ます。</li>
-    </ul>
+  <!-- Like button section -->
+  <section class="box reveal like-box" aria-label="このページのリアクション">
+    <button class="like-btn" data-like-button data-content-id="profile" aria-pressed="false">
+      👍 いいね
+    </button>
+    <span class="like-count" aria-live="polite" aria-atomic="true">0</span>
   </section>
 </main>
-
-<div class="page-nav">
-  <a href="index.html" class="nav-btn prev">← Prev</a>
-  <a href="strength.html" class="nav-btn next">Next →</a>
-</div>
 <footer>© 2025 Sasaki Tasuku</footer>
-<script defer src="js/scripts.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

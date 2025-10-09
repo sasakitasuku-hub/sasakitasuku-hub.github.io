@@ -1,45 +1,27 @@
-
-// Active nav + reveal
+// Like button script with localStorage & dataLayer push
 (function(){
-  var links=document.querySelectorAll('header nav a');
-  links.forEach(function(a){ if(a.classList.contains('active')) a.setAttribute('aria-current','page'); });
-  var els=document.querySelectorAll('.box,.hero,.page-title,.lead,.quote,.carousel-container,.page-nav');
-  els.forEach(function(e){ e.classList.add('reveal'); });
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(ent){ if(ent.isIntersecting){ ent.target.classList.add('is-in'); io.unobserve(ent.target);} });
-  },{threshold:.1});
-  els.forEach(function(e){ io.observe(e); });
-})();
+  var buttons = document.querySelectorAll('[data-like-button]');
+  if(!buttons.length) return;
+  function storageKey(id){return 'like_'+id;}
+  function countKey(id){return 'like_count_'+id;}
 
-// Carousel auto-scroll (pause on hover); reduced-motion aware
-(function(){
-  var car=document.querySelector('.carousel');
-  if(!car) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce) return;
-  var hover=false;
-  car.addEventListener('mouseenter',()=>hover=true);
-  car.addEventListener('mouseleave',()=>hover=false);
-  function tick(){
-    if(!hover){
-      if(car.scrollLeft + car.clientWidth >= car.scrollWidth - 2){
-        car.scrollTo({left:0, behavior:'smooth'});
-      }else{
-        car.scrollLeft += 1;
-      }
-    }
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-})();
+  buttons.forEach(function(btn){
+    var id = btn.getAttribute('data-content-id') || location.pathname.replace(/\W+/g,'_') || 'page';
+    var countEl = btn.nextElementSibling && btn.nextElementSibling.classList.contains('like-count') ? btn.nextElementSibling : null;
+    var pressed = localStorage.getItem(storageKey(id))==='1';
+    if(pressed){btn.setAttribute('aria-pressed','true');btn.textContent='💙 ありがとう！';btn.disabled=true;}
+    var savedCount=parseInt(localStorage.getItem(countKey(id))||'0',10);
+    if(countEl)countEl.textContent=savedCount;
 
-// Back to top
-(function(){
-  var btn=document.createElement('button');
-  btn.className='back-top'; btn.setAttribute('aria-label','ページ上部へ戻る'); btn.textContent='↑ Top';
-  document.body.appendChild(btn);
-  function onScroll(){ btn.style.display = (window.scrollY>400)?'inline-block':'none'; }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-  onScroll();
+    btn.addEventListener('click',function(){
+      if(btn.getAttribute('aria-pressed')==='true')return;
+      btn.setAttribute('aria-pressed','true');btn.textContent='💙 ありがとう！';btn.disabled=true;
+      var newCount=savedCount+1;savedCount=newCount;
+      localStorage.setItem(countKey(id),String(newCount));
+      localStorage.setItem(storageKey(id),'1');
+      if(countEl)countEl.textContent=newCount;
+      window.dataLayer=window.dataLayer||[];
+      window.dataLayer.push({event:'reaction',reaction_type:'like',content_id:id,value:1});
+    });
+  });
 })();
