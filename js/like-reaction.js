@@ -60,14 +60,14 @@
   var pressed = localStorage.getItem(storageKey(contentId)) === '1';
   if(pressed){
      btn.setAttribute('aria-pressed','true');
-     btn.textContent = '💙 ありがとうございます！';
+     btn.textContent = '💙 ありがとうございました！';
      btn.disabled = true;
   }
 
   btn.addEventListener('click', function(){
      if(btn.getAttribute('aria-pressed') === 'true') return;
      btn.setAttribute('aria-pressed','true');
-     btn.textContent = '💙 ありがとう！';
+     btn.textContent = '💙 ありがとうございます！';
      btn.disabled = true;
 
      try{
