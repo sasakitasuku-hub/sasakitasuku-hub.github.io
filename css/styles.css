@@ -1,5 +1,15 @@
 
 /* ===== Base Reset & Tokens ===== */
+/* ====[↓ここから追加]==== */
+
+/* 見出しサイズ統一 */
+main h3,
+main h4 {
+  font-size: clamp(20px, 2.4vw, 22px);
+}
+
+/* ====[↑ここまで追加]==== */
+
 *{box-sizing:border-box} html,body{margin:0;padding:0}
 :root{
   --bg:#0f1221; --card:#181b2e; --ink:#e8ebff; --sub:#b9c0ff;
