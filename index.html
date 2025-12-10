@@ -74,7 +74,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="micro">※ 社内チャットやメールでゆるくどうぞ。</p>
   </section>
+<!-- お問い合わせセクション -->
+<section id="section-contact" style="margin-top: 60px; padding: 40px 20px; background-color: #161b22; border-radius: 8px;">
+    <h2 style="font-size: 2rem; margin-bottom: 30px; color: #58a6ff;">📮 お問い合わせ</h2>
+    
+    <form id="contact-form" style="max-width: 600px; margin: 0 auto;">
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label for="name" style="display: block; margin-bottom: 8px; color: #c9d1d9;">お名前 *</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                style="width: 100%; padding: 12px; background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: #c9d1d9; font-size: 1rem;"
+            >
+        </div>
+        
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label for="email" style="display: block; margin-bottom: 8px; color: #c9d1d9;">メールアドレス *</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                style="width: 100%; padding: 12px; background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: #c9d1d9; font-size: 1rem;"
+            >
+        </div>
+        
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label for="message" style="display: block; margin-bottom: 8px; color: #c9d1d9;">お問い合わせ内容 *</label>
+            <textarea 
+                id="message" 
+                name="message" 
+                rows="6" 
+                required 
+                style="width: 100%; padding: 12px; background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: #c9d1d9; font-size: 1rem; resize: vertical;"
+            ></textarea>
+        </div>
+        
+        <button 
+            type="submit" 
+            style="width: 100%; padding: 14px; background-color: #238636; color: white; border: none; border-radius: 6px; font-size: 1.1rem; cursor: pointer; transition: background-color 0.2s;"
+            onmouseover="this.style.backgroundColor='#2ea043'" 
+            onmouseout="this.style.backgroundColor='#238636'"
+        >
+            送信する
+        </button>
+    </form>
+    
+    <p style="margin-top: 20px; color: #8b949e; font-size: 0.9rem;">
+        ※ このフォームはGTM/GA4のテスト用です。実際の送信機能は未実装です。
+    </p>
+</section>
 
+<!-- フォーム送信時の処理（テスト用） -->
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // デフォルトの送信を停止
+    
+    // サンクスページに遷移
+    window.location.href = 'thanks.html';
+});
+</script>
   <div class="box reveal">
     <h3>読む順番のおすすめ</h3>
     <p class="lead">Profile（原点） → Strength（積み上げた力） → Goals（これから）</p>
